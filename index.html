@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Programmieren für Nicht-Programmierer</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+        <!--<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">-->
+        <!--<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">-->
+        <!--<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">-->
+        <!--<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">-->
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+        <script src="reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Programmieren für Nicht-Programmierer</h1>
+					<h3>Eine Einführung mit JavaScript</h3>
+                    <p>
+                        <small><a href="mailto:oliver.zeigermann@gmail.com">Oliver Zeigermann</a> / <a href="http://zeigermann.eu">http://zeigermann.eu</a></small>
+                    </p>
+                    <p>
+                        <a href="index.html?print-pdf">Druck Version</a>
+                    </p>
+				</section>
+                <section>
+                    <h1>JavaScript</h1>
+                    <ul>
+                        <li class="fragment">Wir betrachten die Programmiersprache JavaScript</li>
+                        <li class="fragment">Diese Programmiersprache läuft auf jedem Computer, der einen Webbrowser enthält</li>
+                        <li class="fragment">Ihr könnt eigene HTML-Seiten mit JavaScript mit Leben füllen</li>
+                        <li class="fragment">JavaScript ist weltweit einer der am weitest verbreiteten Programmiersprachen</li>
+                        <li class="fragment">Wir benutzen den Browser, um eigenen Programme zu schreiben, wir müssen nichts installieren</li>
+                        <li class="fragment"><a target="_blank" href="http://jsfiddle.net/">http://jsfiddle.net/</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Aufgabe 0: Kennenlernen der Programmierumgebung</h2>
+                    <ol>
+                        <li class="fragment">Verbinde dich mit dem Internet</li>
+                        <li class="fragment">Öffne die Seite <a target="_blank" href="http://jsfiddle.net/">http://jsfiddle.net/</a></li>
+                        <li class="fragment">Gib im Kasten mit der Beschriftung JavaScript die folgende Anweisung ein
+                            <pre><code class="javascript" contenteditable>alert("Hallo, Leute");</code></pre>
+                        <li class="fragment">Starte das Programm mit dem <code>Run</code>-Knopf</li>
+                        <li class="fragment">Vergewissere dich, dass ein kleines Fenster mit dem Text "Hallo, Leute" angezeigt wird
+                    </ol>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Anweisungen</h1>
+                        <ul>
+                            <li class="fragment">Programme in JavaScript bestehen häufig aus Anweisungen</li>
+                            <li class="fragment">Mit Anweisungen teilt ihr dem Computer mit, was er tun soll</li>
+                            <li class="fragment">Ihr müsst dem Computer Anweisungen in einer bestimmten Form geben, damit er sie versteht</li>
+                            <li class="fragment">Der Computer ist sehr kleinlich</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Beispiele</h2>
+                        <ul>
+                            <li class="fragment">Der Computer soll 10 plus 10 ausrechnen
+                                <pre><code class="javascript" contenteditable>10 + 10;</code></pre>
+                            <li class="fragment">Am Ende jeder Anweisung steht ein Semikolon</li>
+                            <li class="fragment">Ihr könnt auch mit Texten arbeiten, diese müssen dann in Anführungszeichen stehen
+                                <pre><code class="javascript" contenteditable>"Olli " + " hat " + "Kaffeedurst";</code></pre>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Funktionsaufrufe</h1>
+                        <ul>
+                            <li class="fragment">Damit richtig etwas passiert, müsst ihr Funktionen aufrufen</li>
+                            <li class="fragment">Funktionen haben einen Namen und erwarten eine Reihe von Parametern</li>
+                            <li class="fragment">Die Parameter geben der Funktion Informationen darüber, was im einzelnen passieren soll</li>
+                            <li class="fragment">Ihr ruft eine Funktion auf, indem ihr den Namen der Funktion angebt und in runden Klammern danach die Parameter</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Beispiele</h2>
+                        <ul>
+                            <li class="fragment">Der Computer soll 10 plus 10 nicht nur ausrechnen, sondern auch ausgeben</li>
+                            <li class="fragment">Wir rufen die Funktion <code>alert</code> auf und übergeben ihr als Parameter, was sie ausgeben soll
+                                <pre><code class="javascript" contenteditable>alert(10 + 10);</code></pre>
+                            <li class="fragment">oder
+                                <pre><code class="javascript" contenteditable>alert("Olli " + " hat " + "Kaffeedurst");</code></pre>
+                            <li class="fragment">Diese Ausgaben erscheinen dann in einem Fenster</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Variablen</h1>
+                        <ul>
+                            <li class="fragment">Wie in der Mathematik gibt es in der Programmierung Variablen</li>
+                            <li class="fragment">Variablen können unterschiedliche Werte annehmen und sind veränderbar</li>
+                            <li class="fragment">Ihr greift auf Variablen über ihre Namen zu</li>
+                            <li class="fragment">Variablen können z.B. Texte, Zahlen oder Objekte enthalten</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Beispiele</h2>
+                        <ul>
+                            <li class="fragment">Um eine neue Variable einzuführen, schreibt ihr das Wort <code>var</code> vor den Namen der Variablen</li>
+                            <li class="fragment">Die Variable <code>laenge</code> hat den Wert 10
+                                <pre><code class="javascript" contenteditable>var laenge = 10;</code></pre>
+                            <li class="fragment">Ihr könnt den Wert einer Variablen auch ändern
+                            <pre><code class="javascript" contenteditable>laenge = 20;</code></pre>
+                            <li class="fragment">Ihr könnt auf den Wert einer Variablen jederzeit wieder zugreifen, z.B. um ihn einer Funktion als Parameter zu übergeben
+                                <pre><code class="javascript" contenteditable>alert(laenge);</code></pre>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Objekte</h1>
+                        <ul>
+                            <li class="fragment">In der Programmierung gibt es Konstrukte, die Dinge der realen Welt abbilden</li>
+                            <li class="fragment">Diese Konstrukte heißen Objekte</li>
+                            <li class="fragment">Objekte beinhalten Eigenschaften und Funktionen</li>
+                            <li class="fragment">Beispiele für Objekte: Gesicht, HTML-Seite, Leinwand</li>
+                            <li class="fragment">Objekte könnt ihr in Variablen speichern</li>
+                            <li class="fragment">Manche Objekte sind von vorn herein in Variablen gespeichert</li>
+                            <li class="fragment">Andere Objekte könnt euch durch Aufrufe aus einem dieser Objekte geben lassen</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Beispiele</h2>
+                        <ul>
+                            <li class="fragment">Ihr habt über die Variable <code>document</code> Zugriff auf das Objekt für die HTML-Seite
+                            <li class="fragment">Dieses Objekt ist von vorn herein verfügbar
+                            <li class="fragment">Das Objekt <code>document</code> hat z.B. einen Titel, an diesen kommt ihr über einen Punkt
+                                <pre><code class="javascript" contenteditable>alert(document.title);</code></pre>
+                            <li class="fragment">Über den Punkt kommt ihr an alle Eigenschaften eines Objekts, auch an seine Funktionen
+                            <li class="fragment">Über die Funktion <code>getElementById</code> kommt ihr an alle Teile eurer HTML-Seite
+                                <pre><code contenteditable><h1 id="titel">Hallo, Leute</h1>;
+alert(document.getElementById("titel").nodeName);</code></pre>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Leinwand</h1>
+                        <ul>
+                            <li class="fragment">Ihr könnt in eure HTML-Seiten eine Leinwand einbinden
+                                <pre><code class="javascript" contenteditable>&lt;canvas id="myCanvas" width="600px" height="400px">&lt;/canvas></code></pre>
+                            <li class="fragment">An diese Leinwand kommt ihr als Objekt über seine <code>id</code> heran
+                                <pre><code class="javascript" contenteditable>var canvas = document.getElementById("myCanvas");</code></pre>
+                            <li class="fragment">Bevor es los geht, müssen wir noch alles einrichten für ein Zeichnen in 2D
+                                <pre><code class="javascript" contenteditable>var context = canvas.getContext('2d');</code></pre>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Zeichnen auf der Leinwand</h2>
+                        <ul>
+                            <li class="fragment">Über den <code>context</code> könnt ihr Funktionen aufrufen, die Dinge auf der Leinwand darstellen, z.B. einen Kreis
+                                <pre><code class="javascript" contenteditable>context.arc(centerX, centerY, 100, 0, 2 * Math.PI);</code></pre>
+                            <li class="fragment">Ihr könnt auch Eigenschaften der Darstellung verändern, z.B. die Breite des Strichs
+                                <pre><code class="javascript" contenteditable>context.lineWidth = 4;</code></pre>
+                            <li class="fragment">Oder die Farbe als ein kombinierter RGB-Farbwert wie in einer HTML-Seite
+                                <pre><code class="javascript" contenteditable>context.strokeStyle = '#000000';</code></pre>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h1>Kommentare</h1>
+                    <ul>
+                        <li class="fragment">Manchmal möchte man zusätzliche Informationen zu seinem Programm geben</li>
+                        <li class="fragment">Diese Information könnt ihr als einen Kommentar schreiben</li>
+                        <li class="fragment">Kommentare beginnen mit <code>//</code>, z.B.
+                            <pre><code class="javascript" contenteditable>// Dies ist ein Kommentar innerhalb eines Programms</code></pre>
+                    </ul>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Aufgabe 1: JavaScript kennen lernen</h2>
+                        <p>Start: <a target="_blank" href="http://jsfiddle.net/DJCordhose/H2EZN/">http://jsfiddle.net/DJCordhose/H2EZN/</a></p>
+                        <p>Musterlösung: <a target="_blank"  href="http://jsfiddle.net/DJCordhose/H2EZN/1/">http://jsfiddle.net/DJCordhose/H2EZN/1/</a></p>
+                        <p>Stoff: Canvas, Variablen, Objekte, Funktionsaufrufe und Felder</p>
+                    </section>
+                    <section>
+                        <h3>Schritte</h3>
+                        <ol>
+                            <li class="fragment">Öffne die Seite <a href="http://jsfiddle.net/DJCordhose/H2EZN/">http://jsfiddle.net/DJCordhose/H2EZN/</a> in deinem Browser
+                            <li class="fragment">Vergewissere dich, dass unten rechts ein paar geometrische Objekte dargestellt werden
+                            <li class="fragment">Mache einige Experimente in denen du diese Darstellung verändert. Versuche Änderungen von
+                                <ul>
+                                    <li>Farbe
+                                    <li>Strichdicke
+                                    <li>Position
+                                    <li>Radius von Kreisen und Scheiben und
+                                    <li>Anzahl der Objekte
+                                </ul>
+                            <li class="fragment">Verändere die Darstellung so, dass ein Gesicht dargestellt wird. Dieses sollte zumindest zwei Augen enthalten
+                        </ol>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Aufgabe 2: Programm-Code zusammenfassen und wiederverwenden</h2>
+                        <p>Start: <a target="_blank"  href="http://jsfiddle.net/DJCordhose/H2EZN/1/">http://jsfiddle.net/DJCordhose/H2EZN/1/</a></p>
+                        <p>Musterlösung: <a target="_blank"  href="http://jsfiddle.net/DJCordhose/H2EZN/2/">http://jsfiddle.net/DJCordhose/H2EZN/2/</a></p>
+                        <p>Stoff: Fallunterscheidungen und eigenen Funktionen</p>
+                        <p class="fragment">Vielleicht ist dir schon aufgefallen, dass der Programm-Code für dein Gesicht häufige Wiederholungen enthält. Dies wollen wir zusammenfassen und wiederverwenden.</p>
+                    </section>
+                    <section>
+                        <h3>Schritte</h3>
+                        <ol>
+                            <li class="fragment">Speichere deine Lösung aus Aufgabe 1 (Update drücken)
+                                oder beginne mit der Musterlösung
+                            <li class="fragment">Führe eine Funktion “kreis” mit den Parametern “x”, ”y”, “radius” und “gefuellt” ein.
+                            Diese soll an der Position “x”, “y” entweder einen Kreis oder eine Scheibe mit dem Radius “radius” malen.
+                            Wenn der Parameter “gefuellt” gesetzt ist, soll eine Scheibe gemalt werden.
+                            <li class="fragment">Male deine Augen ausschließlich mit Aufrufen dieser Funktion. Das Gesicht sollte am Ende dieser Übung genau so aussehen wie am Anfang.
+                        </ol>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Aufgabe 3: Mausbewegungen nutzen</h2>
+                        <p>Start: <a  target="_blank" href="http://jsfiddle.net/DJCordhose/H2EZN/2/">http://jsfiddle.net/DJCordhose/H2EZN/2/</a></p>
+                        <p>Musterlösung: <a  target="_blank" href="http://jsfiddle.net/DJCordhose/H2EZN/3/">http://jsfiddle.net/DJCordhose/H2EZN/3/</a></p>
+                        <p>Stoff: Reaktion auf Benutzereingaben</p>
+                    </section>
+                    <section>
+                        <h3>Schritte</h3>
+                        <ol>
+                            <li class="fragment">Schreibe eine Funktion, die dein komplettes Gesicht zeichnet. Übergib dabei centerX und centerY als Parameter und verwende den bereits bestehenden Code.
+                            <li class="fragment">Schreibe eine zusätzliche Funktion, die die komplette Leinwand löscht. Z.B. so
+                                <pre><code class="javascript" contenteditable>context.clearRect(0, 0, canvas.width, canvas.height);</code></pre>
+                            <li class="fragment">Verfolge nun die Mauspositionen auf deiner Leinwand und stelle das Gesicht immer an der Position der Maus da. Lösche dazu zuerst die Leinwand und zeichne dann das Gesicht neu.
+                                <pre><code class="javascript" contenteditable>canvas.onmousemove = function (e) {
+    loescheLeinwand();
+    zeichneGesicht(e.clientX, e.clientY);
+};</code></pre>
+                        </ol>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Aufgabe 4: Eigene Augenbewegungen umsetzen</h2>
+                        <p>Start: <a  target="_blank" href="http://jsfiddle.net/DJCordhose/H2EZN/3/">http://jsfiddle.net/DJCordhose/H2EZN/3/</a></p>
+                        <p>Beispiel Pupille: <a  target="_blank" href="http://jsfiddle.net/DJCordhose/H2EZN/4/">http://jsfiddle.net/DJCordhose/H2EZN/4/</a></p>
+                        <p>Beispiel 1000-Äugler: <a  target="_blank" href="http://jsfiddle.net/DJCordhose/H2EZN/6/">http://jsfiddle.net/DJCordhose/H2EZN/6/</a></p>
+                        <p>Überlege dir eine eigene Augenbewegung und setze sie um.</p>
+                    </section>
+                </section>
+			</div>
+
+		</div>
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
