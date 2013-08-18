@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
 		<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
         <!--<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">-->
+        <!-- Dies für das Drucken nehmen -->
         <!--<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">-->
         <!--<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">-->
         <!--<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">-->
@@ -48,7 +49,10 @@
                         <small><a href="mailto:oliver.zeigermann@gmail.com">Oliver Zeigermann</a> / <a href="http://zeigermann.eu">http://zeigermann.eu</a></small>
                     </p>
                     <p>
-                        <a href="index.html?print-pdf">Druck Version</a>
+                        <a target="_blank" href="index.html?print-pdf">Druck Version</a>
+                    </p>
+                    <p>
+                        Web-Version unter: <a target="_blank" href="http://zeigermann.de/non-dev">http://zeigermann.de/non-dev</a>
                     </p>
 				</section>
                 <section>
@@ -90,6 +94,7 @@
                             <li class="fragment">Der Computer soll 10 plus 10 ausrechnen
                                 <pre><code class="javascript" contenteditable>10 + 10;</code></pre>
                             <li class="fragment">Am Ende jeder Anweisung steht ein Semikolon</li>
+                            <li class="fragment">Jeder Anweisung sollte in einer eigenen Zeile stehen</li>
                             <li class="fragment">Ihr könnt auch mit Texten arbeiten, diese müssen dann in Anführungszeichen stehen
                                 <pre><code class="javascript" contenteditable>"Olli " + " hat " + "Kaffeedurst";</code></pre>
                         </ul>
@@ -103,6 +108,7 @@
                             <li class="fragment">Funktionen haben einen Namen und erwarten eine Reihe von Parametern</li>
                             <li class="fragment">Die Parameter geben der Funktion Informationen darüber, was im einzelnen passieren soll</li>
                             <li class="fragment">Ihr ruft eine Funktion auf, indem ihr den Namen der Funktion angebt und in runden Klammern danach die Parameter</li>
+                            <li class="fragment">Mehrere Parameter werden mit Komma von einander getrennt</li>
                         </ul>
                     </section>
                     <section>
@@ -162,8 +168,8 @@
                                 <pre><code class="javascript" contenteditable>alert(document.title);</code></pre>
                             <li class="fragment">Über den Punkt kommt ihr an alle Eigenschaften eines Objekts, auch an seine Funktionen
                             <li class="fragment">Über die Funktion <code>getElementById</code> kommt ihr an alle Teile eurer HTML-Seite
-                                <pre><code contenteditable><h1 id="titel">Hallo, Leute</h1>;
-alert(document.getElementById("titel").nodeName);</code></pre>
+                                <pre><code contenteditable><h1 id="titel">Hallo, Leute</h1>
+alert(document.getElementById("titel").innerHTML);</code></pre>
                         </ul>
                     </section>
                 </section>
@@ -227,6 +233,72 @@ alert(document.getElementById("titel").nodeName);</code></pre>
                 </section>
                 <section>
                     <section>
+                        <h1>Eigene Funktionen</h1>
+                        <ul>
+                            <li class="fragment">Funktionen fassen mehrere Zeilen Programmiercode zusammen</li>
+                            <li class="fragment">Funktionen werden über ihren Namen definiert und können eine Reihe von Parametern erwarten</li>
+                            <li class="fragment">Die Parameter werden über eine Liste von Namen definiert</li>
+                            <li class="fragment">Innerhalb der Funktion verhalten sich die übergebenen Parameter wie Variablen</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Beispiele</h2>
+                        <ul>
+                            <li class="fragment">Ihr beginnt eine Funktionsdefinition mit dem englischen Wort <code>function</code></li>
+                            <li class="fragment">Dann kommt ihr Name, Klammern und eine Liste von Namen, die die Parameter angeben</li>
+                            <li class="fragment">Die Programmierzeilen, die die Funktion zusammenfasst, stehen in geschweiften Klammern <code>{ ... }</code>
+                                <pre><code class="javascript" contenteditable>function hallosagen(name) {
+    alert("Hallo " + name);
+}</code></pre>
+                            <li class="fragment">Weitere Parameter werden mit Komma von einander getrennt</li>
+                            <li class="fragment">nun könnt ihr die Funktion aufrufen und es erscheint ein Fenster mit dem Text "Hallo, Olli"
+                                <pre><code class="javascript" contenteditable>hallosagen("Olli");</code></pre>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Fallunterscheidung</h1>
+                        <ul>
+                            <li class="fragment">Manchmal will man anhand einer bestimmten Bedingung mal das eine Stück Code, mal ein anderes ausführen</li>
+                            <li class="fragment">Dazu gibt es in JavaScript eine Fallunterscheidung</li>
+                            <li class="fragment">Bei dieser kann man ein Stück Code angeben, wenn eine Bedingung erfüllt ist
+                            <li class="fragment">... und einen anderen, wenn die Bedingung nicht erfüllt ist</li>
+                            <li class="fragment">Fallunterscheidungen könnt ihr verschachteln</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Beispiele #1</h2>
+                        <ul>
+                            <li class="fragment">Ihr beginnt eine Funktionsdefinition mit dem englischen Wort <code>if</code></li>
+                            <li class="fragment">Dann kommt in Klammern die Bedingung</li>
+                            <li class="fragment">Die Programmierzeilen, die dann ausgeführt werden sollen, stehen in geschweiften Klammern <code>{ ... }</code>
+                                <pre><code class="javascript" contenteditable>if (name == 'Olli') {
+    alert("Hallo, Meister!");
+}</code></pre>
+                            <li class="fragment">Mit <code>==</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> vergleicht ihr Werte</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Beispiele #2</h2>
+                        <ul>
+                            <li class="fragment">Mit <code>else</code> könnt ihr angeben, was passieren soll, wenn die Bedingung nicht erfüllt ist
+                                <pre><code class="javascript" contenteditable>if (name == 'Olli') {
+    alert("Hallo, Meister!");
+} else {
+    alert("Hallo!");
+}</code></pre>
+                            <li class="fragment">Ob eine Variable oder ein Parameter überhaupt vorhanden sind könnt ihr ohne Vergleich prüfen
+                                <pre><code class="javascript" contenteditable>if (name) {
+    alert("Name ist da!");
+} else {
+    alert("Huch, wo ist der Name?!");
+}</code></pre>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
                         <h2>Aufgabe 2: Programm-Code zusammenfassen und wiederverwenden</h2>
                         <p>Start: <a target="_blank"  href="http://jsfiddle.net/DJCordhose/H2EZN/1/">http://jsfiddle.net/DJCordhose/H2EZN/1/</a></p>
                         <p>Musterlösung: <a target="_blank"  href="http://jsfiddle.net/DJCordhose/H2EZN/2/">http://jsfiddle.net/DJCordhose/H2EZN/2/</a></p>
@@ -247,10 +319,41 @@ alert(document.getElementById("titel").nodeName);</code></pre>
                 </section>
                 <section>
                     <section>
+                        <h1>Auf Benutzereingaben reagieren</h1>
+                        <ul>
+                            <li class="fragment">Euer Programm wird interessanter, wenn es auf Eingaben reagiert</li>
+                            <li class="fragment">Eingaben können z.B. über die Tastatur oder über die Maus passieren</li>
+                            <li class="fragment">In JavaScript reagiert ihr auf Eingaben indem ihr eine Funktion angebt</li>
+                            <li class="fragment">Diese wird aufgerufen, sobald eine Eingabe passiert</li>
+                            <li class="fragment">Eingaben laufen immer über HTML-Elemente, z.B. Leinwände oder Textfelder</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Beispiel Textfeld</h2>
+                        <ul>
+                            <li class="fragment">Zuerst einmal braucht ihr das HTML-Element, dessen Eingabe ihr abfragen wollt, z.B.
+<pre><code class="html" contenteditable>&lt;input type="text" id="name"></code></pre>
+                            <li class="fragment">Dies bekommt ihr am einfachsten als JavaScript-Objekt über seine <code>id</code> mit <code>document.getElementById</code>
+                                <pre><code class="javascript" contenteditable>var textfeld = document.getElementById("name");</code></pre>
+                            <li class="fragment">Diesem Objekt teilt ihr nun mit, welche Funktion bei einer Änderung der Eingabe ausgeführt werden soll
+                                <pre><code class="javascript" contenteditable>function gibEingabeAus () {
+    alert(textfeld.value);
+}
+textfeld.onchange = gibEingabeAus;
+</code></pre>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Komplettes Beispiel</h2>
+                        <p><a target="_blank" href="http://jsfiddle.net/DJCordhose/8XjWh/">http://jsfiddle.net/DJCordhose/8XjWh/</a></p>
+                    </section>
+                </section>
+                <section>
+                    <section>
                         <h2>Aufgabe 3: Mausbewegungen nutzen</h2>
                         <p>Start: <a  target="_blank" href="http://jsfiddle.net/DJCordhose/H2EZN/2/">http://jsfiddle.net/DJCordhose/H2EZN/2/</a></p>
-                        <p>Musterlösung: <a  target="_blank" href="http://jsfiddle.net/DJCordhose/H2EZN/3/">http://jsfiddle.net/DJCordhose/H2EZN/3/</a></p>
-                        <p>Stoff: Reaktion auf Benutzereingaben</p>
+                        <p>Musterlösung: <a  target="_blank" href="http://jsfiddle.net/DJCordhose/H2EZN/7/">http://jsfiddle.net/DJCordhose/H2EZN/7/</a></p>
+                        <p>Stoff: Funktionen als Variablen, Reaktion auf Benutzereingaben</p>
                     </section>
                     <section>
                         <h3>Schritte</h3>
@@ -259,11 +362,40 @@ alert(document.getElementById("titel").nodeName);</code></pre>
                             <li class="fragment">Schreibe eine zusätzliche Funktion, die die komplette Leinwand löscht. Z.B. so
                                 <pre><code class="javascript" contenteditable>context.clearRect(0, 0, canvas.width, canvas.height);</code></pre>
                             <li class="fragment">Verfolge nun die Mauspositionen auf deiner Leinwand und stelle das Gesicht immer an der Position der Maus da. Lösche dazu zuerst die Leinwand und zeichne dann das Gesicht neu.
-                                <pre><code class="javascript" contenteditable>canvas.onmousemove = function (e) {
+                                <pre><code class="javascript" contenteditable>function beiMausbewegung (event) {
     loescheLeinwand();
-    zeichneGesicht(e.clientX, e.clientY);
-};</code></pre>
+    zeichneGesicht(event.clientX, event.clientY);
+}
+canvas.onmousemove = beiMausbewegung;
+</code></pre>
                         </ol>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Schleifen</h1>
+                        <ul>
+                            <li class="fragment">Manchmal will man ein Stück Code mehrere Male ausführen</li>
+                            <li class="fragment">Dazu gibt es in JavaScript ein Schleifen-Konstrukt</li>
+                            <li class="fragment">In diesem zählt ihr über eine Variable die Schleifen-Durchläufe mit</li>
+                            <li class="fragment">Mit einer Bedingung wie bei der Fallunterscheidung könnt ihr entscheiden, ob es einen weiteren Durchlauf geben soll</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Beispiele</h2>
+                        <ul>
+                            <li class="fragment">Ihr beginnt eine Schleife mit dem englischen Wort <code>for</code></li>
+                            <li class="fragment">Dann kommen in Klammern, mit Semikolon mehrere Teile
+                                <ol>
+                                    <li class="fragment">Das Anlegen einer neuen Variablen</li>
+                                    <li class="fragment">Die Bedingung für einen weiteren Schleifendurchlauf</li>
+                                    <li class="fragment">Das Hochzählen der Variablen</li>
+                                </ol>
+                            <li class="fragment">Die Programmierzeilen, die bei jedem Schleifendurchlauf ausgeführt werden sollen, stehen in geschweiften Klammern <code>{ ... }</code>
+                                <pre><code class="javascript" contenteditable>for (var i = 0; i < 5; i = i + 1) {
+    alert("Durchlauf: " + i);
+}</code></pre>
+                        </ul>
                     </section>
                 </section>
                 <section>
