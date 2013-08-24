@@ -1,0 +1,60 @@
+<html>
+<body>
+<canvas id="myCanvas" width="600px" height="400px" style="border-width: 1px; border-style: solid"></canvas>
+
+<script>
+    canvas = document.getElementById("myCanvas");
+    context = canvas.getContext('2d');
+
+    centerX = canvas.width / 2;
+    centerY = canvas.height / 2;
+
+    // Radius eines Auges
+    radiusEye = 100;
+    // Radius eine Pupille
+    radiusPupil = 20;
+    // Der Abstand zwischen zwei Augen
+    distanceEyes = 50;
+
+    // Linkes Auge
+    context.beginPath();
+    context.arc(centerX - radiusEye - distanceEyes, centerY, radiusEye, 0, 2 * Math.PI);
+    context.strokeStyle = '#000000';
+    context.lineWidth = 4;
+    context.stroke();
+    context.closePath();
+
+    // Rechtes Auge
+    context.beginPath();
+    context.arc(centerX + radiusEye, centerY, radiusEye, 0, 2 * Math.PI);
+    context.strokeStyle = '#000000';
+    context.lineWidth = 4;
+    context.stroke();
+    context.closePath();
+
+    // Linke Pupille
+    context.beginPath();
+    context.arc(centerX - radiusEye - distanceEyes, centerY, radiusPupil, 0, 2 * Math.PI);
+    context.fillStyle = '#000000';
+    context.lineWidth = 4;
+    context.fill();
+    context.closePath();
+
+    // Rechte Pupille
+    context.beginPath();
+    context.arc(centerX + radiusEye, centerY, radiusPupil, 0, 2 * Math.PI);
+    context.fillStyle = '#000000';
+    context.lineWidth = 4;
+    context.fill();
+    context.closePath();
+
+    // der Mund
+    context.beginPath();
+    context.arc(centerX - distanceEyes / 2, centerY - radiusEye - distanceEyes, (radiusEye + distanceEyes) * 2, Math.PI / 2 - 0.4, Math.PI / 2 + 0.4);
+    context.strokeStyle = '#000000';
+    context.lineWidth = 4;
+    context.stroke();
+    context.closePath();
+</script>
+</body>
+</html>

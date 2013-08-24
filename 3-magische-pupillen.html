@@ -1,0 +1,95 @@
+<html>
+<body>
+<canvas id="myCanvas" width="600px" height="400px" style="border-width: 1px; border-style: solid"></canvas>
+
+<script>
+    canvas = document.getElementById("myCanvas");
+    context = canvas.getContext('2d');
+
+    centerX = canvas.width / 2;
+    centerY = canvas.height / 2;
+
+    // Radius eines Auges
+    radiusEye = 100;
+    // Radius eine Pupille
+    radiusPupil = 20;
+    // Der Abstand zwischen zwei Augen
+    distanceEyes = 50;
+
+    // Radius bis zu der sich die Pupille bewegen darf
+    aeusserstePupillenPosition = radiusEye - radiusPupil - 25;
+
+    // Einmal am Anfang, das Gesicht guckt in die Mitte
+    mausX = centerX;
+    mausY = centerY;
+    zeichneGesicht();
+
+    // Mausbewegungen verfolgen und Gesicht an der Position der Maus malen
+    function beiMausbewegung (event) {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        mausX = event.clientX - canvas.offsetLeft;
+        mausY = event.clientY - canvas.offsetTop;
+        zeichneGesicht();
+    }
+    canvas.onmousemove = beiMausbewegung;
+
+    function zeichneGesicht() {
+        // Linker Augapfel
+        context.beginPath();
+        context.arc(centerX - radiusEye - distanceEyes, centerY, radiusEye, 0, 2 * Math.PI, false);
+        context.strokeStyle = '#000000';
+        context.lineWidth = 4;
+        context.stroke();
+        context.closePath();
+
+        // Rechter Augapfel
+        context.beginPath();
+        context.arc(centerX + radiusEye, centerY, radiusEye, 0, 2 * Math.PI, false);
+        context.strokeStyle = '#000000';
+        context.lineWidth = 4;
+        context.stroke();
+        context.closePath();
+
+        // Linke Pupille
+        pupilX = skalieren(centerX - radiusEye - distanceEyes, aeusserstePupillenPosition, mausX, canvas.width);
+        pupilY = skalieren(centerY, aeusserstePupillenPosition, mausY, canvas.height);
+        context.beginPath();
+        context.arc(pupilX, pupilY, radiusPupil, 0, 2 * Math.PI, false);
+        context.fillStyle = '#000000';
+        context.lineWidth = 4;
+        context.fill();
+        context.closePath();
+
+        // Linke Pupille
+        pupilX = skalieren(centerX + radiusEye, aeusserstePupillenPosition, mausX, canvas.width);
+        pupilY = skalieren(centerY, aeusserstePupillenPosition, mausY, canvas.height);
+        context.beginPath();
+        context.arc(pupilX, pupilY, radiusPupil, 0, 2 * Math.PI, false);
+        context.fillStyle = '#000000';
+        context.lineWidth = 4;
+        context.fill();
+        context.closePath();
+        
+        // der Mund
+        context.beginPath();
+        context.arc(centerX - distanceEyes / 2, centerY - radiusEye - distanceEyes, (radiusEye + distanceEyes) * 2, Math.PI / 2 - 0.4, Math.PI / 2 + 0.4);
+        context.strokeStyle = '#000000';
+        context.lineWidth = 4;
+        context.stroke();
+        context.closePath();
+    }
+
+    // Der Abstand der Pupille zum Mittelpunkt des Auges in Relation zum Radius des Auges ist wie der Abstand der Maus vom
+    // Mittelpunkt des Ausges zur Gesamtgröße der Leinwand
+    function skalieren(augenPosition, radius, mausPosition, max) {
+        var pupille;
+        if (augenPosition > mausPosition) {
+            pupille = augenPosition - radius * (augenPosition - mausPosition) / augenPosition;
+        } else {
+            pupille = augenPosition + radius * (mausPosition - augenPosition) / (max - augenPosition);
+        }
+        return pupille;
+    }
+</script>
+</body>
+</html>
