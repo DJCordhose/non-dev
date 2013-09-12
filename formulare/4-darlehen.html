@@ -1,0 +1,106 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Darlehensrechner</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <h2>Darlehensrechner</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <form class="form" name="eingabe" action="javascript:werteFormularAus()">
+                    <h3>Daten</h3>
+                    <div class="form-group">
+                        <label>
+                            <span>Preis des Hauses</span>
+                        </label>
+                        <input class="form-control" type="number" name="kaufpreis" min="1" step="1" required placeholder="Preis des Hauses">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span>Anzahlung</span>
+                        </label>
+                        <input class="form-control" type="number" name="anzahlung" min="0" step="1" required placeholder="Anzahlung">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span>Jährlicher Zinssatz</span>
+                        </label>
+                        <input class="form-control" type="number" name="zinsen" min="0.1" step="0.1" required placeholder="%">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span>Laufzeit</span>
+                        </label>
+                        <input class="form-control" type="number" name="laufzeit" min="1" step="1" required placeholder="Laufzeit in Jahren">
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Darlehen berechnen"/>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form name="ausgabe" class="form">
+                    <h3>Ergebnis</h3>
+                    <div class="form-group">
+                        <label>
+                            <span>Darlehenshöhe</span>
+                        </label>
+                        <input class="form-control" name="hoehe" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span>Anzahl der Raten</span>
+                        </label>
+                        <input class="form-control" name="zahlungen" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span>Monatliche Rate</span>
+                        </label>
+                        <input class="form-control" name="monatlich" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span>Gesamtzahlung</span>
+                        </label>
+                        <input class="form-control" name="gesamt" readonly>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function rundeGeld(geld) {
+            return Math.round(geld*100)/100;
+        }
+
+        function berechneDarlehen(eingabeDaten) {
+            monatlicheZinsen = (eingabeDaten.zinsen/100) / 12;
+            ausgabeDaten = {};
+            ausgabeDaten.hoehe = eingabeDaten.kaufpreis - eingabeDaten.anzahlung;
+            ausgabeDaten.zahlungen = eingabeDaten.laufzeit * 12;
+            ausgabeDaten.monatlich = rundeGeld(ausgabeDaten.hoehe * monatlicheZinsen / (1 - Math.pow(1 + monatlicheZinsen,(-1 * ausgabeDaten.zahlungen))));
+            ausgabeDaten.gesamt = rundeGeld(ausgabeDaten.monatlich * ausgabeDaten.zahlungen);
+
+            return ausgabeDaten;
+        }
+
+        function werteFormularAus() {
+            eingabeFormular =  document.forms.eingabe;
+            ausgabeFormular = document.forms.ausgabe;
+
+            eingabeDaten = {};
+            eingabeDaten.kaufpreis = parseFloat(eingabeFormular.kaufpreis.value);
+            eingabeDaten.anzahlung = parseFloat(eingabeFormular.anzahlung.value);
+            eingabeDaten.zinsen = parseFloat(eingabeFormular.zinsen.value);
+            eingabeDaten.laufzeit = parseInt(eingabeFormular.laufzeit.value);
+
+            ausgabeDaten = berechneDarlehen(eingabeDaten);
+            ausgabeFormular.hoehe.value = ausgabeDaten.hoehe.toFixed(2);
+            ausgabeFormular.zahlungen.value = ausgabeDaten.zahlungen.toFixed(0);
+            ausgabeFormular.monatlich.value = ausgabeDaten.monatlich.toFixed(2);
+            ausgabeFormular.gesamt.value = ausgabeDaten.gesamt.toFixed(2);
+        }
+    </script>
+</body>
+</html>

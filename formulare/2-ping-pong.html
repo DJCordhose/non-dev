@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ping-Pong</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <h2>Ping-Pong</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <form class="form" name="eingabe" action="javascript:document.forms.ausgabe.laenge.value = document.forms.eingabe.name.value.length">
+                    <h3>Ping</h3>
+                    <div class="form-group">
+                        <label>
+                            <span>Name</span>
+                        </label>
+                        <input class="form-control" type="text" name="name" required placeholder="Name">
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Auswerten"/>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form name="ausgabe" class="form">
+                    <h3>Pong</h3>
+                    <div class="form-group">
+                        <label>
+                            <span>Länge</span>
+                        </label>
+                        <input class="form-control" name="laenge" readonly>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

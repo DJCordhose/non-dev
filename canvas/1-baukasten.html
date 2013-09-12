@@ -15,7 +15,7 @@
     context.beginPath();
     context.moveTo(centerX - 30, centerY + 30);
     context.lineTo(centerX + 30, centerY + 30);
-    context.strokeStyle = '#000000'; // Farbe: Schwarz
+    context.strokeStyle = 'black';
     context.lineWidth = 4;
     context.stroke();
     context.closePath();
@@ -28,7 +28,7 @@
     // Vierter Parameter: Starwinkel des Kreises im Bogenmaß (0 ist rechts)
     // Fünfter Parameter: Endwinkel des Kreises im Uhrzeigersinn im Bogenmaß (2 * MATH.PI sind 360°)
     context.arc(centerX, centerY, 100, 0, 2 * Math.PI);
-    context.strokeStyle = '#000000';
+    context.strokeStyle = 'black';
     context.lineWidth = 4;
     context.stroke();
     context.closePath();
@@ -36,7 +36,7 @@
     // Scheibe zeichnen
     context.beginPath();
     context.arc(centerX, centerY, 20, 0, 2 * Math.PI);
-    context.fillStyle = '#000000';
+    context.fillStyle = 'black';
     context.fill();
     context.closePath();
 </script>

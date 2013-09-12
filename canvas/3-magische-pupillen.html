@@ -37,7 +37,7 @@
         // Linker Augapfel
         context.beginPath();
         context.arc(centerX - radiusEye - distanceEyes, centerY, radiusEye, 0, 2 * Math.PI, false);
-        context.strokeStyle = '#000000';
+        context.strokeStyle = 'black';
         context.lineWidth = 4;
         context.stroke();
         context.closePath();
@@ -45,7 +45,7 @@
         // Rechter Augapfel
         context.beginPath();
         context.arc(centerX + radiusEye, centerY, radiusEye, 0, 2 * Math.PI, false);
-        context.strokeStyle = '#000000';
+        context.strokeStyle = 'black';
         context.lineWidth = 4;
         context.stroke();
         context.closePath();
@@ -55,7 +55,7 @@
         pupilY = skalieren(centerY, aeusserstePupillenPosition, mausY, canvas.height);
         context.beginPath();
         context.arc(pupilX, pupilY, radiusPupil, 0, 2 * Math.PI, false);
-        context.fillStyle = '#000000';
+        context.fillStyle = 'black';
         context.lineWidth = 4;
         context.fill();
         context.closePath();
@@ -65,7 +65,7 @@
         pupilY = skalieren(centerY, aeusserstePupillenPosition, mausY, canvas.height);
         context.beginPath();
         context.arc(pupilX, pupilY, radiusPupil, 0, 2 * Math.PI, false);
-        context.fillStyle = '#000000';
+        context.fillStyle = 'black';
         context.lineWidth = 4;
         context.fill();
         context.closePath();
@@ -73,7 +73,7 @@
         // der Mund
         context.beginPath();
         context.arc(centerX - distanceEyes / 2, centerY - radiusEye - distanceEyes, (radiusEye + distanceEyes) * 2, Math.PI / 2 - 0.4, Math.PI / 2 + 0.4);
-        context.strokeStyle = '#000000';
+        context.strokeStyle = 'black';
         context.lineWidth = 4;
         context.stroke();
         context.closePath();
@@ -82,13 +82,11 @@
     // Der Abstand der Pupille zum Mittelpunkt des Auges in Relation zum Radius des Auges ist wie der Abstand der Maus vom
     // Mittelpunkt des Ausges zur Gesamtgröße der Leinwand
     function skalieren(augenPosition, radius, mausPosition, max) {
-        var pupille;
         if (augenPosition > mausPosition) {
-            pupille = augenPosition - radius * (augenPosition - mausPosition) / augenPosition;
+            return augenPosition - radius * (augenPosition - mausPosition) / augenPosition;
         } else {
-            pupille = augenPosition + radius * (mausPosition - augenPosition) / (max - augenPosition);
+            return augenPosition + radius * (mausPosition - augenPosition) / (max - augenPosition);
         }
-        return pupille;
     }
 </script>
 </body>

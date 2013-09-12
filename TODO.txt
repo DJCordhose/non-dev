@@ -44,3 +44,7 @@ gibAnredeAus("Miriam", "weiblich");
 gibAnredeAus("Olli", "männlich");
 
 // Schritt 3: Kreis-Funktion mit Fallunterscheidung für gefüllt oder nicht
+
+- Beispiele Daniel
+  - Clipping, gute Augen: http://jsfiddle.net/H2EZN/53/
+  - Malen, Maus-Down: http://jsfiddle.net/H2EZN/70/
