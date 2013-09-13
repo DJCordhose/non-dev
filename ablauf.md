@@ -1,21 +1,20 @@
-Zeiten: 10:00 - 17:00, 6 Stunden netto
+Zeiten
+------
+10:00 - 17:00, 6 Stunden netto
 
-* Formulare
-  * HTML-Grundlagen (1 Stunde)
-    * Beispiel 0: Hallo, Welt
-    * Beispiel 1: Blöcke und Layout
-  * Formulare, Strukturierte Daten und Auswertung
-    * Beispiel 2: Ping-Pong
-  * Variablen und Funktions-Aufrufe (parseInt +
+Erklärmuster
+------------
 
+### Objekt und Punkt-Navigation
+- Pfade über Objekte sind Pfade auf dem Dateisystem
+- Punkt-Navigation ist wie \ in Windows Pfaden
+- Objekt ist Ordner, Property ist Unterordner, oder Datei oder Programm
 
-* canvas (letze Stunde)
-  * Fallunterscheidungen und Zeichnen
-
+### Funktion
+- Funktion ist wie ferngesteuertes Miniprogramm, Parameter sind die Eingaben, Return sind die Ergebnisse
 
 Übungen
-
-
+-------
 Motto: Hallo, Welt,
 jsbin: http://jsbin.com/oXAGAyu/1/
 1. Hallo, Welt (1 Std.)
