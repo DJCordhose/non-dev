@@ -36,7 +36,7 @@
     function zeichneGesicht() {
         // Linker Augapfel
         context.beginPath();
-        context.arc(centerX - radiusEye - distanceEyes, centerY, radiusEye, 0, 2 * Math.PI, false);
+        context.arc(centerX - radiusEye - distanceEyes, centerY, radiusEye, 0, 2 * Math.PI);
         context.strokeStyle = 'black';
         context.lineWidth = 4;
         context.stroke();
@@ -44,7 +44,7 @@
 
         // Rechter Augapfel
         context.beginPath();
-        context.arc(centerX + radiusEye, centerY, radiusEye, 0, 2 * Math.PI, false);
+        context.arc(centerX + radiusEye, centerY, radiusEye, 0, 2 * Math.PI);
         context.strokeStyle = 'black';
         context.lineWidth = 4;
         context.stroke();
@@ -54,7 +54,7 @@
         pupilX = skalieren(centerX - radiusEye - distanceEyes, aeusserstePupillenPosition, mausX, canvas.width);
         pupilY = skalieren(centerY, aeusserstePupillenPosition, mausY, canvas.height);
         context.beginPath();
-        context.arc(pupilX, pupilY, radiusPupil, 0, 2 * Math.PI, false);
+        context.arc(pupilX, pupilY, radiusPupil, 0, 2 * Math.PI);
         context.fillStyle = 'black';
         context.lineWidth = 4;
         context.fill();
@@ -64,12 +64,12 @@
         pupilX = skalieren(centerX + radiusEye, aeusserstePupillenPosition, mausX, canvas.width);
         pupilY = skalieren(centerY, aeusserstePupillenPosition, mausY, canvas.height);
         context.beginPath();
-        context.arc(pupilX, pupilY, radiusPupil, 0, 2 * Math.PI, false);
+        context.arc(pupilX, pupilY, radiusPupil, 0, 2 * Math.PI);
         context.fillStyle = 'black';
         context.lineWidth = 4;
         context.fill();
         context.closePath();
-        
+
         // der Mund
         context.beginPath();
         context.arc(centerX - distanceEyes / 2, centerY - radiusEye - distanceEyes, (radiusEye + distanceEyes) * 2, Math.PI / 2 - 0.4, Math.PI / 2 + 0.4);

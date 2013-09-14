@@ -2,6 +2,13 @@ Zeiten
 ------
 10:00 - 17:00, 6 Stunden netto
 
+Werkzeuge
+---------
+
+- http://jsbin.com für Code
+- http://awwapp.com/draw.html für Zeichnungen
+
+
 Erklärmuster
 ------------
 
@@ -38,7 +45,7 @@ Erklärmuster
   - Ich zeige die fertige magische Zahl von außen über Link und lasse Teilnehmer raten, wie ich rechne
   - Ich zeige dann das Programm und wie die Berechnung geht, erkläre dabei Funktionen (parseInt,werteFormularAus)
     und Variablen (eingabeFormular, ausgabeFormular)
-  - Teilnehmer basteln ihr eigenes Formular mit Text- und Number-Feldern und eigene Berechnung
+  - Teilnehmer bilden 2er-Teams und basteln ihr eigenes Formular mit Text- und Number-Feldern und eigene Berechnung
   - Ich zeige am Ende den Darlehensrechner als etwas, das die Teilnehme auch hätten bauen können und erkläre
 
 4. Canvas-Baukasten (1 Std.)
