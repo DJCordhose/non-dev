@@ -62,5 +62,9 @@ Erklärmuster
 5. Magische Pupillen (1 Std.)
   - Motto: Fallunterscheidungen und reagieren auf die Maus
   - jsbin: http://jsbin.com/eHAHOvE/2/
-  - Ich zeige das alles
-  - Teilnehmer passen wieder an
+  - Ich zeige das alles zum Abschluss
+  - Teilnehmer passen mit dem Wissen aus der vorherigen Übung an, wenn noch Zeit ist
+
+Zeichnungen
+- http://jsbin.com/iGovet/1
+- http://jsbin.com/AtabUR/7

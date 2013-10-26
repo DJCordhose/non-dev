@@ -1,4 +1,5 @@
 TODO:
+- index.html mit diesem Ideen anpassen und ausdrucken
 - 10:00 - 17:00
 - Große Übungen
   1. Ohne Nutzerinteraktion (1 Stunde)
