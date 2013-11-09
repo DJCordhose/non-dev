@@ -9,6 +9,12 @@ Werkzeuge
 - http://awwapp.com/draw.html für Zeichnungen
 
 
+Softe Bestandteile
+------------------
+- Pair-Programming: Augen mit Bewegung
+-  Magische Zahl: Code Review
+
+
 Erklärmuster
 ------------
 
@@ -46,6 +52,7 @@ Erklärmuster
   - Ich zeige dann das Programm und wie die Berechnung geht, erkläre dabei Funktionen (parseInt,werteFormularAus)
     und Variablen (eingabeFormular, ausgabeFormular)
   - Teilnehmer bilden 2er-Teams und basteln ihr eigenes Formular mit Text- und Number-Feldern und eigene Berechnung
+    - Hier evtl. als softer Bestandteil auch Code-Reviews
   - Ich zeige am Ende den Darlehensrechner als etwas, das die Teilnehme auch hätten bauen können und erkläre
 
 4. Canvas-Baukasten (1 Std.)

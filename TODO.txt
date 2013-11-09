@@ -1,3 +1,7 @@
+Folien:
+- Plunker oder jsbin direkt einbinden in iframe
+
+
 TODO:
 - index.html mit diesem Ideen anpassen und ausdrucken
 - 10:00 - 17:00
