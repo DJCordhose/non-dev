@@ -1,3 +1,9 @@
+Als nächstes
+- Übungen in Folien einflechten
+- Für jedes Thema, eine Theorie-Folie und eine mit Beispielen
+-
+
+
 Folien:
 - Plunker oder jsbin direkt einbinden in iframe
 

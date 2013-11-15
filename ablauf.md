@@ -1,3 +1,18 @@
+Ablauf
+------
+* HTML
+  * Einführungsfolie
+  * Intro jsbin
+  * Der Rest auf jsbin (Übung 1 und 2)
+
+* JavaScript
+  * Anweisungen
+  * Variablen
+  * Datenstrukturen
+  * Fallunterscheidungen
+  * Funktionen
+  * Mehrfache Ausführung in Schleifen
+
 Zeiten
 ------
 10:00 - 17:00, 6 Stunden netto
