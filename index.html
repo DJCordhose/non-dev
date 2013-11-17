@@ -56,6 +56,30 @@
                     </p>
 				</section>
 
+            <section>
+                <section>
+                    <h2>Was ist Programmieren?</h2>
+                    <ul>
+                        <li class="fragment">Programmierer schreiben bzw. verändern Text-Dateien
+                        <li class="fragment">Diese Text-Dateien enthalten die Beschreibung von Programmteilen
+                        <li class="fragment">Solche Beschreibungen sind in einer bestimmten Programmiersprache geschrieben
+                        <li class="fragment">Ein komplexes Programm besteht aus vielen solchen Dateien
+                        <li class="fragment">Oft kommt mehr als eine Programmiersprache zum Einsatz
+                        <li class="fragment">Programmierer benutzen häufig sehr komplexe, für ihre Bedürfnisse angepasste Text-Editor-Programme
+                        <li class="fragment">Es ginge aber auch mit Nodepad o.ä
+                    </ul>
+                </section>
+                <section>
+                    <h2>Beispiel-Programm</h2>
+                    <p class="fragment">Was muss man tun, um im Browser, ein solches Fenster zu bekommen?</p>
+                    <img class="fragment" src="hello-welt-alert.png">
+                </section>
+                <section>
+                    <h2>Der Programm-Text</h2>
+                    <pre><code class="javascript" contenteditable>alert("Hallo, Welt");</code></pre>
+                </section>
+            </section>
+
                 <section>
                     <h2>Inhalte</h2>
                     <ul>
@@ -97,6 +121,17 @@
                         <li class="fragment">JavaScript ist weltweit eine der am weitest verbreiteten Programmiersprachen</li>
                     </ul>
                 </section>
+                <section>
+                    <h2>Für uns wichtige Konzepte</h2>
+                    <ul>
+                        <li class="fragment">Anweisungen
+                        <li class="fragment">Datenstrukturen / Objekte
+                        <li class="fragment">Variablen
+                        <li class="fragment">Blöcke / Funktionen
+                        <li class="fragment">Fallunterscheidungen
+                        <li class="fragment">Schleifen / Wiederholungen
+                    </ul>
+                </section>
 
                 <section>
                     <section>
@@ -111,12 +146,26 @@
                     <section>
                         <h3>Beispiele</h3>
                         <ul>
+                            <li class="fragment">Der Computer soll eine Zahl ausgeben
+                                <pre><code class="javascript" contenteditable>console.log(10);</code></pre>
                             <li class="fragment">Der Computer soll 10 plus 10 ausrechnen
-                                <pre><code class="javascript" contenteditable>10 + 10;</code></pre>
+                                <pre><code class="javascript" contenteditable>console.log(10 + 10);</code></pre>
                             <li class="fragment">Am Ende jeder Anweisung steht ein Semikolon</li>
                             <li class="fragment">Jede Anweisung sollte in einer eigenen Zeile stehen</li>
                             <li class="fragment">Ihr könnt auch mit Texten arbeiten, diese müssen dann in Anführungszeichen stehen
-                                <pre><code class="javascript" contenteditable>"Olli hat Kaffeedurst";</code></pre>
+                                <pre><code class="javascript" contenteditable>console.log("Olli hat Kaffeedurst");</code></pre>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Übung</h3>
+                        <ul>
+                            <li class="fragment">Öffnet in <a target="_blank" href="http://jsbin.com/?js,console">jsbin.com</a> die JavaScript- und Consolen-Reiter
+                            <li class="fragment">Gebt das Ergebnis einer komplexe Berechnung mit <code>console.log</code> aus
+                            <li class="fragment">z.B. <code>console.log(10 * (10 + 29));</code>
+                            <li class="fragment">Lasst euren Namen ausgeben
+                            <li class="fragment">z.B. <code>console.log("Olli");</code>
+                            <li class="fragment">Lasst die Länge eures Namens ausgeben
+                            <li class="fragment">Versucht, Blödsinn auszuführen und guckt was passiert
                         </ul>
                     </section>
                 </section>
@@ -144,20 +193,98 @@
                     </section>
                 </section>
 
-                <!-- Brauchen wir, um im DOM zu navigieren -->
                 <section>
-                    <h2>Datenstrukturen (Objekte)</h2>
-                    <ul>
-                        <li class="fragment">Daten in JavaScript können wie ein Datei-System organisiert werden</li>
-                        <li class="fragment">Strukturierte Daten heißen Objekte</li>
-                        <li class="fragment">Objekte können unter verschiedenen Namen Einträge ablegen</li>
-                        <li class="fragment">Z.B. wie in einem Telefonbuch</li>
-                        <li class="fragment">Die Einträge können Zahlen, Texte oder andere Objekte sein</li>
-                        <li class="fragment">An die Einträge kommt man über einen Punkt heran: <code>.</code></li>
-                        <li class="fragment">Pfade über Objekte sind wie Pfade auf dem Dateisystem
-                        <li class="fragment">Punkt-Navigation ist wie <code>\\</code> in Windows Pfaden
-                        <li class="fragment">Objekt ist Ordner, Eintrag ist Unterordner, oder Datei oder Programm
-                    </ul>
+                    <section>
+                        <h2>Wie organisiert man Daten?</h2>
+                        <ul>
+                            <li class="fragment">Bezeichner anlegen, z.B.
+                                <ul>
+                                    <li class="fragment">Namen für Dateien
+                                    <li class="fragment">Kundennummern
+                                </ul>
+                            </li>
+                            <li class="fragment">Bei großen Datenmenge Hierarchien Anlegen
+                                <ul>
+                                    <li class="fragment">Ordner und Unterordner
+                                    <li class="fragment">Nummerierungen
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Passende Datenstrukturen als Programmierkonzept</h2>
+                        <ul>
+                            <li class="fragment">Objekte (vgl. Ordner)
+                            <li class="fragment">Variablen mit Namen (vgl. Namen für Dateien)
+                            <li class="fragment">Arrays (vgl. nummerierte Listen)
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Datenstruktur: Objekt</h2>
+                        <ul>
+                            <li class="fragment">Objekte haben wie Ordner Namen
+                            <li class="fragment">Ein Objekt kann z.B. der Bildschirm sein
+                            <li class="fragment">Objekte können wie Ordner verschachtelt sein
+                            <li class="fragment">Z.B. ein Formular oder eine Spalte innerhalb des Bildschirms
+                            <li class="fragment">Pfade können auf bestimmte Objekte verweisen
+                            <li class="fragment">Anstatt <code>\</code> nehmt ihr bei Objekten den Punkt: <code>.</code>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Objekte in HTML</h2>
+                        <ul>
+                            <li class="fragment">In <code>HTML</code> steht <code>document</code> für den aktuellen Bildschirm
+                            <li class="fragment">Dieser Bildschirm kann u.a. Formulare für Eingaben enthalten (<code>&lt;form></code>)
+                            <li class="fragment">Formulare können wiederum Eingabefelder enthalten (<code>&lt;input></code>)
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Formular-Beispiel</h2>
+                        <p class="fragment">HTML</p>
+                        <pre class="fragment"><code class="html" contenteditable>&lt;form name="ausgabe">
+        &lt;input name="laenge">
+&lt;/form></code></pre>
+                        <p class="fragment">Setzen des Eingabefelds mit JavaScript über dessen Pfad</p>
+                        <pre class="fragment"><code class="javascript" contenteditable>document.forms.ausgabe.laenge.value = 10;</code></pre>
+                    </section>
+                    <section>
+                        <h2>Übung</h2>
+                        <ul>
+                            <li class="fragment">Öffne das komplette Programm auf <a target="_blank" href="http://jsbin.com/ONiTUQUy/1/edit">jsbin.com</a>
+                            <li class="fragment">Drücke auf den <code>Auswerten-Knopf</code>, um das Programm auszuprobieren
+                            <li class="fragment">Ändere den Namen des Formulars und des Eingabefelds
+                            <li class="fragment">Funktioniert das Programm noch?
+                            <li class="fragment">Ändere den Wert, der in das Eingabefeld geschrieben wird durch eine komplexere Berechnung
+                        </ul>
+                    </section>
+                    <!-- Brauchen wir, um im DOM zu navigieren -->
+                    <section>
+                        <h2>Datenstruktur: Objekt</h2>
+                        <ul>
+                            <li class="fragment">Daten in JavaScript können wie ein Datei-System organisiert werden</li>
+                            <li class="fragment">Strukturierte Daten heißen Objekte</li>
+                            <li class="fragment">Objekte können unter verschiedenen Namen Einträge ablegen</li>
+                            <li class="fragment">Z.B. wie in einem Telefonbuch</li>
+                            <li class="fragment">Die Einträge können Zahlen, Texte oder andere Objekte sein</li>
+                            <li class="fragment">An die Einträge kommt man über einen Punkt heran: <code>.</code></li>
+                            <li class="fragment">Pfade über Objekte sind wie Pfade auf dem Dateisystem
+                            <li class="fragment">Punkt-Navigation ist wie <code>\\</code> in Windows Pfaden
+                            <li class="fragment">Objekt ist Ordner, Eintrag ist Unterordner, oder Datei oder Programm
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Der Programm-Text</h2>
+                        <pre><code class="javascript" contenteditable>var box = {
+    x: 0,
+    y: 0,
+    w: 10,
+    h: 10,
+    color: 'black',
+    speed: 5
+}
+</code></pre>
+                    </section>
+
                 </section>
 
                 <section>

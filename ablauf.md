@@ -1,5 +1,9 @@
 Ablauf
 ------
+* Eröffnungsritual (15 - 20 Minuten)
+  * Jeder spricht 5 Minuten mit seinem Nachbarn und es wird gegenseitig gefragt, warum der Nachbar hier ist und was er erwartet
+  * 5 Minuten der eine, 5 Minuten der andere
+  * Dann stellt jeder den anderen in ca. 1 Minute vor
 * HTML
   * Einführungsfolie
   * Intro jsbin
@@ -70,6 +74,9 @@ Erklärmuster
     - Hier evtl. als softer Bestandteil auch Code-Reviews
   - Ich zeige am Ende den Darlehensrechner als etwas, das die Teilnehme auch hätten bauen können und erkläre
 
+===========================================
+Optional
+
 4. Canvas-Baukasten (1 Std.)
   - Motto: Zeichnen und Rechnen
   - jsbin: http://jsbin.com/eQAFIWI/2/
@@ -87,6 +94,13 @@ Erklärmuster
   - Ich zeige das alles zum Abschluss
   - Teilnehmer passen mit dem Wissen aus der vorherigen Übung an, wenn noch Zeit ist
 
+===========================================
+
+
 Zeichnungen
 - http://jsbin.com/iGovet/1
 - http://jsbin.com/AtabUR/7
+
+Programm aus jsbin
+==================
+* 2a-objekt-pfade: http://jsbin.com/ONiTUQUy/1/edit

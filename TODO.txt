@@ -1,7 +1,7 @@
 Als nächstes
 - Übungen in Folien einflechten
 - Für jedes Thema, eine Theorie-Folie und eine mit Beispielen
--
+- Motivation Objekte: Unordnung in Dateisystem, evtl. Screenshot von Windows-Explorer mit Frage: Was ist hier nicht so gut?
 
 
 Folien:
