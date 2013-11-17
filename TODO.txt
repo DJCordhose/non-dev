@@ -1,4 +1,9 @@
-TODO:
+TODO
+----
+- Erweiterungen des Spiels selbst bauen
+
+Beachten
+--------
 - Besser motivieren: Erst zeigen was man machen will und dann das Handwerkszeug dazu beibringen, z.B. erst die Box mit dem alert zeigen, dann den Befehl dazu
 - Themen bis zur ersten Übung radikal eindampfen
   - Variablen ohne var, keine Objekte

@@ -27,14 +27,15 @@ Zeitplan
   * 5 Minuten der eine, 5 Minuten der andere
   * Dann stellt jeder den anderen in ca. 1 Minute vor
 
-* 10:30 HTML und JsBin-Intro
-* 11:00 Strukturen in HTML
+* 10:30 Einführung HTML und JsBin-Intro
+* 11:00 Anweisungen und Übung dazu
 * 11:30 kl. Pause
-* 11:45 Anweisungen und Übung dazu
-* 12:15 Variablen und Übung dazu
-* 13:00 Mittagspause
-* 14:00 Datenorganisation mit Übung
-* 15:00 Funtionen / Blöcke, Fallunterscheidung und Magische Zahl
+* 11:45 Funktionsaufrufe, Variablen inkl. kleiner Adhoc-Übung
+* 12:15 Datenorganisation mit Übung
+* 13:30 Mittagspause
+* 14:30 Eigene Funktion schreiben inkl. kleiner Adhoc-Übung
+* 14:45 Fallunterscheidung inkl. kleiner Adhoc-Übung
+* 15:00 Ratespiel / Übung Magische Zahl
 * 16:00 kl. Pause
 * 16:15 Objekte erzeugen und Pair-Programming
 * 16:30 Spiel im Pair-Programming-Modus

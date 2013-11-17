@@ -61,5 +61,6 @@ function draw() {
 // Mögliche Erweiterungen
 // - Farbe der Box bei jedem Schritt ändern
 // - Trägheit und Beschleunigung einführen
-// - Hindernisse Einführen und auf Kollision prüfen
+// - Hindernisse einführen und auf Kollision prüfen
+// - Einen zweiten Spieler mitspielen lassen (Steuerung über anderer Tasten)
 ////////////////////////////
