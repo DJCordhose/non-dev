@@ -6,10 +6,10 @@
 </head>
 <body>
 <div class="container">
-    <h2>Wer rät wie sich die magische Zahl errechnet?</h2>
+    <h2>Wer rät, wie sich die magische Zahl errechnet?</h2>
     <div class="row">
         <div class="col-md-4">
-            <form class="form" name="eingabe" action="javascript:werteFormularAus()">
+            <form class="form" name="eingabe">
                 <h3>Eingabe</h3>
                 <div class="form-group">
                     <label>
@@ -39,9 +39,14 @@
         </div>
     </div>
     <script>
+        document.forms.eingabe.addEventListener( 'submit', function(event) {
+            werteFormularAus();
+            event.preventDefault();
+        });
+
         function werteFormularAus() {
-            eingabeFormular =  document.forms.eingabe;
-            ausgabeFormular = document.forms.ausgabe;
+            var eingabeFormular =  document.forms.eingabe;
+            var ausgabeFormular = document.forms.ausgabe;
 
             ausgabeFormular.magie.value = eingabeFormular.name.value.length + parseInt(eingabeFormular.alter.value, 10);
         }

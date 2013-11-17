@@ -1,51 +1,44 @@
-Ablauf
+Rahmen
 ------
+* 14.12.: 10-18 CoFab, Dresden
+* http://www.cofab.de/aktuell/131214_programmieren-fuer-nicht-programmierer/
+
+Vorbereitung
+------------
+- Folien auf zeigermann.eu/talks/non-dev laden
+- Beispiele auf jsbin aktuell halten
+- Erweiterungen des Spiels selbst bauen
+
+Programme auf jsbin
+==================
+* 0-hallo: http://jsbin.com/oXAGAyu/1/edit
+* 1-div-class: http://jsbin.com/utObiYa/1/edit
+* 2a-objekt-pfade: http://jsbin.com/ONiTUQUy/1/edit
+* 2-ping-pong: http://jsbin.com/AwUZOqiC/1/edit
+* 3-magische-zahl: http://jsbin.com/OMogiNo/1/edit?html,js,console,output
+* Spiel: http://jsbin.com/akipoyiH/1/edit?html,js,console,output
+
+Zeitplan
+--------
+* 10:00 Beginn und Begrüßung, Wann Mittag?
+
 * Eröffnungsritual (15 - 20 Minuten)
   * Jeder spricht 5 Minuten mit seinem Nachbarn und es wird gegenseitig gefragt, warum der Nachbar hier ist und was er erwartet
   * 5 Minuten der eine, 5 Minuten der andere
   * Dann stellt jeder den anderen in ca. 1 Minute vor
-* HTML
-  * Einführungsfolie
-  * Intro jsbin
-  * Der Rest auf jsbin (Übung 1 und 2)
 
-* JavaScript
-  * Anweisungen
-  * Variablen
-  * Datenstrukturen
-  * Fallunterscheidungen
-  * Funktionen
-  * Mehrfache Ausführung in Schleifen
-
-Zeiten
-------
-10:00 - 17:00, 6 Stunden netto
-
-Werkzeuge
----------
-
-- http://jsbin.com für Code
-- http://awwapp.com/draw.html für Zeichnungen
-
-
-Softe Bestandteile
-------------------
-- Pair-Programming: Augen mit Bewegung
--  Magische Zahl: Code Review
-
-
-Erklärmuster
-------------
-
-### Objekt und Punkt-Navigation
-- Pfade über Objekte sind Pfade auf dem Dateisystem
-- Punkt-Navigation ist wie \ in Windows Pfaden
-- Objekt ist Ordner, Property ist Unterordner, oder Datei oder Programm
-
-### Funktion
-- Funktion ist wie ferngesteuertes Miniprogramm
-- Parameter sind die Eingaben
-- Return sind die Ergebnisse
+* 10:30 HTML und JsBin-Intro
+* 11:00 Strukturen in HTML
+* 11:30 kl. Pause
+* 11:45 Anweisungen und Übung dazu
+* 12:15 Variablen und Übung dazu
+* 13:00 Mittagspause
+* 14:00 Datenorganisation mit Übung
+* 15:00 Funtionen / Blöcke, Fallunterscheidung und Magische Zahl
+* 16:00 kl. Pause
+* 16:15 Objekte erzeugen und Pair-Programming
+* 16:30 Spiel im Pair-Programming-Modus
+* 17:45 Abschluss und Abschied
 
 Übungen
 -------
@@ -101,6 +94,3 @@ Zeichnungen
 - http://jsbin.com/iGovet/1
 - http://jsbin.com/AtabUR/7
 
-Programm aus jsbin
-==================
-* 2a-objekt-pfade: http://jsbin.com/ONiTUQUy/1/edit

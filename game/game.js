@@ -38,7 +38,7 @@ var box = {
     h: 10,
     color: 'black',
     speed: 5
-}
+};
 
 function update() {
     if (38 in pressed) box.y -= box.speed; // up

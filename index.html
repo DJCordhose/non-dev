@@ -97,20 +97,15 @@
                         </li>
                     </ul>
                 </section>
+
                 <section>
-                    <h2>HTML</h2>
+                    <h2>Einführung in HTML und JsBin</h2>
                     <ul>
                         <li class="fragment">Wir benutzen den Browser, um eigenen Programme zu schreiben, wir müssen nichts installieren</li>
                         <li class="fragment"><a target="_blank" href="http://jsbin.net/">http://jsbin.net/</a></li>
+                        <li class="fragment"><a target="_blank" href="http://jsbin.com/oXAGAyu/1/edit">Fertiges Hallo Welt auf jsbin</a>
                     </ul>
                 </section>
-
-                <section>
-                    <h3>Hallo, Welt</h3>
-                    <h4>Einführung in HTML und JsBin</h4>
-                    <a target="_blank" href="http://jsbin.com/oXAGAyu/1/edit">http://jsbin.com/oXAGAyu/1/edit</a>
-                </section>
-
 
                 <section>
                     <h2>JavaScript</h2>
@@ -125,9 +120,10 @@
                     <h2>Für uns wichtige Konzepte</h2>
                     <ul>
                         <li class="fragment">Anweisungen
-                        <li class="fragment">Datenstrukturen / Objekte
                         <li class="fragment">Variablen
+                        <li class="fragment">Datenstrukturen / Objekte nutzen
                         <li class="fragment">Blöcke / Funktionen
+                        <li class="fragment">Datenstrukturen / Objekte erzeugen
                         <li class="fragment">Fallunterscheidungen
                         <li class="fragment">Schleifen / Wiederholungen
                     </ul>
@@ -166,6 +162,31 @@
                             <li class="fragment">z.B. <code>console.log("Olli");</code>
                             <li class="fragment">Lasst die Länge eures Namens ausgeben
                             <li class="fragment">Versucht, Blödsinn auszuführen und guckt was passiert
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Funktionsaufrufe</h1>
+                        <ul>
+                            <li class="fragment">Damit richtig etwas passiert, müsst ihr Funktionen aufrufen</li>
+                            <li class="fragment">Eine Funktion ist wie ferngesteuertes Miniprogramm
+                            <li class="fragment">Mehrere Anweisungen werden zusammengefasst
+                            <li class="fragment">Funktionen haben einen Namen und erwarten eine Reihe von Parametern</li>
+                            <li class="fragment">Die Parameter geben der Funktion Informationen darüber, was im einzelnen passieren soll</li>
+                            <li class="fragment">Ihr ruft eine Funktion auf, indem ihr den Namen der Funktion angebt und in runden Klammern danach die Parameter</li>
+                            <li class="fragment">Mehrere Parameter werden mit Komma von einander getrennt</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Beispiele</h2>
+                        <ul>
+                            <li class="fragment">Der Computer soll 10 plus 10 nicht nur ausrechnen, sondern auch ausgeben</li>
+                            <li class="fragment">Wir rufen die Funktion <code>alert</code> auf und übergeben ihr als Parameter, was sie ausgeben soll
+                                <pre><code class="javascript" contenteditable>alert(10 + 10);</code></pre>
+                            <li class="fragment">oder
+                                <pre><code class="javascript" contenteditable>alert("Olli " + " hat " + "Kaffeedurst");</code></pre>
+                            <li class="fragment">Diese Ausgaben erscheinen dann in einem Fenster</li>
                         </ul>
                     </section>
                 </section>
@@ -247,33 +268,117 @@
                         <p class="fragment">Setzen des Eingabefelds mit JavaScript über dessen Pfad</p>
                         <pre class="fragment"><code class="javascript" contenteditable>document.forms.ausgabe.laenge.value = 10;</code></pre>
                     </section>
+                </section>
+                <section>
+                    <h2>Code-Review</h2>
+                    <ul>
+                        <li class="fragment">Bei einem <a target="_blank" href="http://en.wikipedia.org/wiki/Code_review">Code Review</a> guckt sich jemand anderes euer Programm an
+                        <li class="fragment">Am besten erklärt ihr euer Programm und der Reviewer stellt fragen
+                        <li class="fragment">Sinn ist hauptsächlich
+                            <ul>
+                                <li class="fragment">eine Überprüfung des Programms
+                                <li class="fragment">Wissenstransfer
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Übung: Datenstrukturen</h2>
+                    <ul>
+                        <li class="fragment">Öffne das komplette Programm auf <a target="_blank" href="http://jsbin.com/ONiTUQUy/1/edit">jsbin.com</a>
+                        <li class="fragment">Drücke auf den <code>Auswerten-Knopf</code>, um das Programm auszuprobieren
+                        <li class="fragment">Ändere den Namen des Formulars und des Eingabefelds
+                        <li class="fragment">Funktioniert das Programm noch?
+                        <li class="fragment">Ändere den Wert, der in das Eingabefeld geschrieben wird durch eine komplexere Berechnung
+                        <li class="fragment">Führe mit einem andern Teilnehmer ein Code-Review durch
+                        <li class="fragment">Gucke dir mit dem anderen Teilnehmer dies komplexere Version an und versuche sie zu verstehen <a target="_blank" href="http://jsbin.com/AwUZOqiC/1/edit">jsbin.com</a>
+                    </ul>
+                </section>
+
+                <section>
                     <section>
-                        <h2>Übung</h2>
+                        <h1>Eigene Funktionen schreiben</h1>
                         <ul>
-                            <li class="fragment">Öffne das komplette Programm auf <a target="_blank" href="http://jsbin.com/ONiTUQUy/1/edit">jsbin.com</a>
-                            <li class="fragment">Drücke auf den <code>Auswerten-Knopf</code>, um das Programm auszuprobieren
-                            <li class="fragment">Ändere den Namen des Formulars und des Eingabefelds
-                            <li class="fragment">Funktioniert das Programm noch?
-                            <li class="fragment">Ändere den Wert, der in das Eingabefeld geschrieben wird durch eine komplexere Berechnung
+                            <li class="fragment">Funktionen fassen mehrere Zeilen Programmiercode zusammen</li>
+                            <li class="fragment">Funktionen werden über ihren Namen definiert und können eine Reihe von Parametern erwarten</li>
+                            <li class="fragment">Die Parameter werden über eine Liste von Namen definiert</li>
+                            <li class="fragment">Innerhalb der Funktion verhalten sich die übergebenen Parameter wie Variablen</li>
                         </ul>
                     </section>
-                    <!-- Brauchen wir, um im DOM zu navigieren -->
                     <section>
-                        <h2>Datenstruktur: Objekt</h2>
+                        <h2>Beispiel / Übung</h2>
                         <ul>
-                            <li class="fragment">Daten in JavaScript können wie ein Datei-System organisiert werden</li>
-                            <li class="fragment">Strukturierte Daten heißen Objekte</li>
-                            <li class="fragment">Objekte können unter verschiedenen Namen Einträge ablegen</li>
-                            <li class="fragment">Z.B. wie in einem Telefonbuch</li>
-                            <li class="fragment">Die Einträge können Zahlen, Texte oder andere Objekte sein</li>
-                            <li class="fragment">An die Einträge kommt man über einen Punkt heran: <code>.</code></li>
-                            <li class="fragment">Pfade über Objekte sind wie Pfade auf dem Dateisystem
-                            <li class="fragment">Punkt-Navigation ist wie <code>\\</code> in Windows Pfaden
-                            <li class="fragment">Objekt ist Ordner, Eintrag ist Unterordner, oder Datei oder Programm
+                            <li class="fragment">Ihr beginnt eine Funktionsdefinition mit dem englischen Wort <code>function</code></li>
+                            <li class="fragment">Dann kommen Name, Klammern und eine Liste von Namen, die die Parameter angeben</li>
+                            <li class="fragment">Die Programmierzeilen, die die Funktion zusammenfasst, stehen in geschweiften Klammern <code>{ ... }</code>
+                                <pre><code class="javascript" contenteditable>function hallosagen(name) {
+    alert("Hallo " + name);
+}</code></pre>
+                            <li class="fragment">nun könnt ihr die Funktion aufrufen und es erscheint ein Fenster mit dem Text "Hallo, Olli"
+                                <pre><code class="javascript" contenteditable>hallosagen("Olli");</code></pre>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Fallunterscheidungen</h2>
+                        <ul>
+                            <li class="fragment">Manchmal will man anhand einer bestimmten Bedingung mal das eine Stück Code, mal ein anderes ausführen</li>
+                            <li class="fragment">Dazu gibt es in JavaScript eine Fallunterscheidung</li>
+                            <li class="fragment">Bei dieser kann man ein Stück Code angeben, wenn eine Bedingung erfüllt ist
+                            <li class="fragment">... und einen anderen, wenn die Bedingung nicht erfüllt ist</li>
+                            <li class="fragment">Fallunterscheidungen könnt ihr verschachteln</li>
                         </ul>
                     </section>
                     <section>
-                        <h2>Der Programm-Text</h2>
+                        <h3>Beispiele #1</h3>
+                        <ul>
+                            <li class="fragment">Ihr beginnt eine Funktionsdefinition mit dem englischen Wort <code>if</code></li>
+                            <li class="fragment">Dann kommt in Klammern die Bedingung</li>
+                            <li class="fragment">Die Programmierzeilen, die dann ausgeführt werden sollen, stehen in geschweiften Klammern <code>{ ... }</code>
+                                <pre><code class="javascript" contenteditable>if (name == "Olli") {
+    alert("Hallo, Meister!");
+}</code></pre>
+                            <li class="fragment">Mit <code>==</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> vergleicht ihr Werte</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Beispiele #2</h2>
+                            <p class="fragment">Mit <code>else</code> könnt ihr angeben, was passieren soll, wenn die Bedingung nicht erfüllt ist</p>
+                            <pre class="fragment"><code class="javascript" contenteditable>if (name == "Olli") {
+    alert("Hallo, Meister!");
+} else {
+    alert("Hallo!");
+}</code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Übung: Erzeuge deine eigene Magische Zahl</h2>
+                    <p class="fragment">Wir spielen ein Ratespiel</p>
+                    <ul>
+                        <li class="fragment">Beginne mit dem Ratespiel auf <a target="_blank" href="http://jsbin.com/OMogiNo/1/edit?html,js,console,output">jsbin.com</a>
+                        <li class="fragment">Verändere die Berechnung der geheimen Zahl, so dass das erraten möglichst schwierig ist
+                        <li class="fragment">Nutze eine ggf. Fallunterscheidung
+                        <li class="fragment">Stelle allerdings sicher, dass du für jede Eingabe das richtige Ergegnis um Kopf errechnen kannst
+                        <li class="fragment">Diese Mal musst du allein arbeiten, damit keiner vorher weiß, wie sich deine geheime Zahl errechnet
+                        <li class="fragment">Teile Links auf das fertige Programm und lass andere deine Berechnung erraten
+                    </ul>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Eigene Objekte erzeugen</h2>
+                        <ul>
+                            <li class="fragment">Ihr könnt auch eigene Objekte erzeugen, um Daten zu strukturieren
+                            <li class="fragment">Objekte können Texte, Zahlen und sogar Funktionen enthalten
+                            <li class="fragment">Alle Inhalten von Objekten können jederzeit geändert werden
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Beispiel: Ein neues Objekt erzeugen</h2>
                         <pre><code class="javascript" contenteditable>var box = {
     x: 0,
     y: 0,
@@ -281,49 +386,33 @@
     h: 10,
     color: 'black',
     speed: 5
-}
+};
+box.x = 100;
 </code></pre>
                     </section>
-
                 </section>
-
                 <section>
-                    <h2>Fallunterscheidungen</h2>
+                    <h2>Pair-Programming</h2>
+                    <ul>
+                        <li class="fragment">Beim <a target="_blank" href="http://de.wikipedia.org/wiki/Paarprogrammierung">Pair-Programming</a> schreibt ihr mit jemand anderem zusammen
+                        <li class="fragment">Ein Programmierer tippt, der andere berät und behält den Überblick
+                        <li class="fragment">Die Rollen werden regelmäßig getauscht
+                        <li class="fragment">Sinn ist hauptsächlich
+                            <ul>
+                                <li class="fragment">eine Überprüfung des Programms
+                                <li class="fragment">Wissenstransfer
+                            </ul>
+                        </li>
+                    </ul>
                 </section>
-
                 <section>
-                    <h2>Funktionen</h2>
-                    <li class="fragment">Funktion ist wie ferngesteuertes Miniprogramm
-                    <li class="fragment">Parameter sind die Eingaben
-                    <li class="fragment">Return sind die Ergebnisse
-                </section>
-
-                <section>
-                    <section>
-                        <h2>Schleifen</h2>
-                        <ul>
-                            <li class="fragment">Manchmal will man ein Stück Code mehrere Male ausführen</li>
-                            <li class="fragment">Dazu gibt es in JavaScript ein Schleifen-Konstrukt</li>
-                            <li class="fragment">In diesem zählt ihr über eine Variable die Schleifen-Durchläufe mit</li>
-                            <li class="fragment">Mit einer Bedingung wie bei der Fallunterscheidung könnt ihr entscheiden, ob es einen weiteren Durchlauf geben soll</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h3>Beispiele</h3>
-                        <ul>
-                            <li class="fragment">Ihr beginnt eine Schleife mit dem englischen Wort <code>for</code></li>
-                            <li class="fragment">Dann kommen in Klammern, mit Semikolon mehrere Teile
-                                <ol>
-                                    <li class="fragment">Das Anlegen einer neuen Variablen</li>
-                                    <li class="fragment">Die Bedingung für einen weiteren Schleifendurchlauf</li>
-                                    <li class="fragment">Das Hochzählen der Variablen</li>
-                                </ol>
-                            <li class="fragment">Die Programmierzeilen, die bei jedem Schleifendurchlauf ausgeführt werden sollen, stehen in geschweiften Klammern <code>{ ... }</code>
-                                <pre><code class="javascript" contenteditable>for (var i = 0; i < 5; i = i + 1) {
-                                    alert("Durchlauf: " + i);
-                                    }</code></pre>
-                        </ul>
-                    </section>
+                    <h2>Übung: Ein Spiel mit Pair-Programming erweitern</h2>
+                    <ul>
+                        <li class="fragment">Mache dich mit dem sehr einfachen Spiel auf <a target="_blank" href="http://jsbin.com/akipoyiH/1/edit?html,js,console,output">jsbin.com</a> vertraut
+                        <li class="fragment">Suche dir einen Partner mit dem du das Spiel zusammen erweiterst
+                        <li class="fragment">Erweiterungsmöglichkeiten sind im Programm-Code des Spiels beschrieben
+                        <li class="fragment">Haltet euch an die Pair-Programming Regeln, tauscht mindestens einmal die Rollen
+                    </ul>
                 </section>
 
             </div>
