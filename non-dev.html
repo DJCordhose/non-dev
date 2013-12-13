@@ -66,7 +66,7 @@
                         <li class="fragment">Ein komplexes Programm besteht aus vielen solchen Dateien
                         <li class="fragment">Oft kommt mehr als eine Programmiersprache zum Einsatz
                         <li class="fragment">Programmierer benutzen häufig sehr komplexe, für ihre Bedürfnisse angepasste Text-Editor-Programme
-                        <li class="fragment">Es ginge aber auch mit Nodepad o.ä
+                        <li class="fragment">Es ginge aber auch mit Notepad o.ä.
                     </ul>
                 </section>
                 <section>
@@ -98,6 +98,7 @@
                     </ul>
                 </section>
 
+            <section>
                 <section>
                     <h2>Einführung in HTML und JsBin</h2>
                     <ul>
@@ -106,6 +107,69 @@
                         <li class="fragment"><a target="_blank" href="http://jsbin.com/oXAGAyu/1/edit">Fertiges Hallo Welt auf jsbin</a>
                     </ul>
                 </section>
+                <section>
+                    <h2>HTML-Grundlagen</h2>
+                    <ul>
+                        <li class="fragment">Alle Seiten, die ihr euch im Internet anguckt sind in HTML geschrieben
+                        <li class="fragment">HTML besteht aus
+                            <ul>
+                                <li class="fragment">Text, z.B. "Hallo, Welt"
+                                <li class="fragment">Struktur, z.B. <code>&lt;h1>...&lt/h1></code> und
+                                <li class="fragment">Layout, z.B. <code>&lt;h1 style="font-size: 100px">...&lt;/h1></code> und
+                                <li class="fragment">evtl. Funktionalität, z.B. <code>alert("Hallo, Welt");</code>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>HTML-Struktur: Tags</h2>
+                    <ul>
+                        <li class="fragment">Struktur wird über sogenannte <code>Tags</code> angegeben
+                        <li class="fragment">Tags beginnen mit einem Kleiner-Zeichen <code>&lt;</code>
+                        und enden mit einem Größer-Zeichen <code>&gt;</code>
+                        <li class="fragment">Dazwischen steht immer ein Name, der den Zweck des Tags beschreibt, z.B.
+                            <ul>
+                                <li class="fragment"><code>h1</code>: Heading 1, die größte Überschrift
+                                <li class="fragment"><code>h2</code>: Heading 2, die nächstkleinere Überschrift
+                                <li class="fragment"><code>p</code>: Paragraph, ein Absatz
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>HTML-Struktur: Beginn und Ende</h2>
+                    <ul>
+                        <li class="fragment">Meist wird etwas Text durch zwei Tags umschlossen
+                        <li class="fragment">Bei <code>&lt;h1>...&lt/h1></code>
+                        gibt das erste Tag den Start der Überschrift, das zweite das Ende der Überschrift an
+                        <li class="fragment">Ein Ende-Tag hat zusätzlich einen Slash <code>/</code> vor seinem Namen
+                        <li class="fragment">Die Namen von Start- und Ende-Tag müssen übereinstimmen
+                    </ul>
+                </section>
+                <section>
+                    <h2>HTML-Struktur: Attribute</h2>
+                    <ul>
+                        <li class="fragment">Start-Tags können zusätzlich zu ihrem Namen noch weitere Informationen enthalten
+                        <li class="fragment">z.B. gibt <code>&lt;h1 style="font-size: 100px">...&lt;/h1></code> die Größe der Schrift an
+                        <li class="fragment">Diese Informationen heißen Attribute
+                        <li class="fragment">Attribute haben ebenso einen Namen, der ihre Funktion beschreibt
+                        <li class="fragment">Zusätzlich können Attribute auch einen Wert haben, der in Anführungszeichen steht
+                        <li class="fragment">Attribute gelten bis zum Ende-Tag
+                    </ul>
+                </section>
+                <section>
+                    <h3>Übung</h3>
+                    <ul>
+                        <li class="fragment">Ändert das erste "Hallo, Welt"-Programm so um, dass es euren Namen ausgibt
+                        <li class="fragment">Andert den Titel eures HTML-Dokuments
+                        <li class="fragment">Wie heißt die kleinste Überschrift?
+                        <li class="fragment">Schreibt einen Absatz, der euch beschreibt
+                        <li class="fragment">Fügt eurem Absatz ein Attribut hinzu, dass dem Absatz eure Lieblingsfarbe gibt
+                        <li class="fragment">Bei mir wäre das z.B. <code>&lt;p style="color:blue">Olli&lt;/p></code>
+
+                    </ul>
+                </section>
+            </section>
 
                 <section>
                     <h2>JavaScript</h2>
@@ -185,6 +249,8 @@
                             <li class="fragment">Wir rufen die Funktion <code>alert</code> auf und übergeben ihr als Parameter, was sie ausgeben soll
                                 <pre><code class="javascript" contenteditable>alert(10 + 10);</code></pre>
                             <li class="fragment">Diese Ausgaben erscheinen dann in einem Fenster</li>
+                            <li class="fragment">Funktionen können auf Werte zurück gegen, z.B.
+                                <pre><code class="javascript" contenteditable>console.log(encodeURIComponent("Hallo, Welt"));</code></pre>
                         </ul>
                     </section>
                 </section>
@@ -210,6 +276,16 @@
                                 <pre><code class="javascript" contenteditable>alert(laenge);</code></pre>
                         </ul>
                     </section>
+                </section>
+                <section>
+                    <h3>Übung: Funktionsaufrufe und Variablen</h3>
+                    <ul>
+                        <li class="fragment">Öffnet ein neues <a target="_blank" href="http://jsbin.com/?js,console">jsbin-Fenster</a>
+                        <li class="fragment">Speichert das Ergebnis einer Berechnung in einer Variablen
+                        <li class="fragment">Gebt den Wert der Variablen auf der Console aus
+                        <li class="fragment">Ändert den Wert der Variablen mit dem Rückgabewert einer Funktion
+                        <li class="fragment">Gebt den Wert der Variablen erneut auf der Console aus
+                    </ul>
                 </section>
 
                 <section>
@@ -246,7 +322,7 @@
                             <li class="fragment">Objekte können wie Ordner verschachtelt sein
                             <li class="fragment">Z.B. ein Formular oder eine Spalte innerhalb des Bildschirms
                             <li class="fragment">Pfade können auf bestimmte Objekte verweisen
-                            <li class="fragment">Anstatt <code>\</code> nehmt ihr bei Objekten den Punkt: <code>.</code>
+                            <li class="fragment">Anstatt <code>\</code> bzw. <code>/</code> nehmt ihr bei Objekten den Punkt: <code>.</code>
                         </ul>
                     </section>
                     <section>
@@ -265,32 +341,41 @@
 &lt;/form></code></pre>
                         <p class="fragment">Setzen des Eingabefelds mit JavaScript über dessen Pfad</p>
                         <pre class="fragment"><code class="javascript" contenteditable>document.forms.ausgabe.laenge.value = 10;</code></pre>
+                        <p class="fragment">So bettet ihr das JavaScript direkt in HTML ein</p>
+                        <pre class="fragment"><code class="javascript" contenteditable>action="javascript:document.forms.ausgabe.laenge.value = 10"</code></pre>
                     </section>
                 </section>
                 <section>
-                    <h2>Code-Review</h2>
-                    <ul>
-                        <li class="fragment">Bei einem <a target="_blank" href="http://en.wikipedia.org/wiki/Code_review">Code Review</a> guckt sich jemand anderes euer Programm an
-                        <li class="fragment">Am besten erklärt ihr euer Programm und der Reviewer stellt fragen
-                        <li class="fragment">Sinn ist hauptsächlich
-                            <ul>
-                                <li class="fragment">eine Überprüfung des Programms
-                                <li class="fragment">Wissenstransfer
-                            </ul>
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Übung: Datenstrukturen</h2>
-                    <ul>
-                        <li class="fragment">Öffne das komplette Programm auf <a target="_blank" href="http://jsbin.com/ONiTUQUy/1/edit">jsbin.com</a>
-                        <li class="fragment">Drücke auf den <code>Auswerten-Knopf</code>, um das Programm auszuprobieren
-                        <li class="fragment">Ändere den Namen des Formulars und des Eingabefelds
-                        <li class="fragment">Funktioniert das Programm noch?
-                        <li class="fragment">Ändere den Wert, der in das Eingabefeld geschrieben wird durch eine komplexere Berechnung
-                        <li class="fragment">Führe mit einem andern Teilnehmer ein Code-Review durch
-                        <li class="fragment">Gucke dir mit dem anderen Teilnehmer diese komplexere Version an und versuche sie zu verstehen <a target="_blank" href="http://jsbin.com/AwUZOqiC/1/edit">jsbin.com</a>
-                    </ul>
+                    <section>
+                        <h2>Übung: Datenstrukturen #1</h2>
+                        <ul>
+                            <li class="fragment">Öffne das komplette Programm auf <a target="_blank" href="http://jsbin.com/ONiTUQUy/3/edit">jsbin.com</a>
+                            <li class="fragment">Drücke auf den <code>Auswerten-Knopf</code>, um das Programm auszuprobieren
+                            <li class="fragment">Ändere den Namen des Formulars und des Eingabefelds
+                            <li class="fragment">Funktioniert das Programm noch?
+                            <li class="fragment">Ändere den Wert, der in das Eingabefeld geschrieben wird durch eine komplexere Berechnung
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Exkurs: Code-Review</h2>
+                        <ul>
+                            <li class="fragment">Bei einem <a target="_blank" href="http://en.wikipedia.org/wiki/Code_review">Code Review</a> guckt sich jemand anderes euer Programm an
+                            <li class="fragment">Am besten erklärt ihr euer Programm und der Reviewer stellt fragen
+                            <li class="fragment">Sinn ist hauptsächlich
+                                <ul>
+                                    <li class="fragment">eine Überprüfung des Programms
+                                    <li class="fragment">Wissenstransfer
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Übung: Datenstrukturen #2</h2>
+                        <ul>
+                            <li class="fragment">Führe mit einem andern Teilnehmer ein Code-Review durch
+                            <li class="fragment">Gucke dir mit dem anderen Teilnehmer diese komplexere Version an und versuche sie zu verstehen <a target="_blank" href="http://jsbin.com/AwUZOqiC/1/edit">jsbin.com</a>
+                        </ul>
+                    </section>
                 </section>
 
                 <section>
@@ -301,10 +386,11 @@
                             <li class="fragment">Funktionen werden über ihren Namen definiert und können eine Reihe von Parametern erwarten</li>
                             <li class="fragment">Die Parameter werden über eine Liste von Namen definiert</li>
                             <li class="fragment">Innerhalb der Funktion verhalten sich die übergebenen Parameter wie Variablen</li>
+                            <li class="fragment">Eine Funktion kann beliebige Werte als Rückgabe liefern</li>
                         </ul>
                     </section>
                     <section>
-                        <h2>Beispiel / Übung</h2>
+                        <h2>Beispiel</h2>
                         <ul>
                             <li class="fragment">Ihr beginnt eine Funktionsdefinition mit dem englischen Wort <code>function</code></li>
                             <li class="fragment">Dann kommen Name, Klammern und eine Liste von Namen, die die Parameter angeben</li>
@@ -314,6 +400,33 @@
 }</code></pre>
                             <li class="fragment">nun könnt ihr die Funktion aufrufen und es erscheint ein Fenster mit dem Text "Hallo, Olli"
                                 <pre><code class="javascript" contenteditable>hallosagen("Olli");</code></pre>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Beispiel mit Rückgabe</h2>
+                        <ul>
+                            <li class="fragment">Eine Funktion kann ein Ergebnis liefern, indem sie den Wert einer
+                                Variablen mit <code>return</code> zurück gibt, z.B.
+                            <li class="fragment"><pre><code class="javascript" contenteditable>function hallotext(name) {
+    var text = "Hallo " + name;
+    return text;
+}
+</code></pre>
+                            <li class="fragment">Rückgabewerte können in Variablen abgelegt werden
+                            <li class="fragment"><pre><code class="javascript" contenteditable>var text = hallotext("Olli");
+console.log(text);
+</code></pre>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Übung: Schreibe eine Funktion, die zwei Zahlen addiert</h2>
+                        <ul>
+                            <li class="fragment">Öffnet ein neues <a target="_blank" href="http://jsbin.com/?js,console">jsbin-Fenster</a>
+                            <li class="fragment">Erstelle eine Funktion mit zwei Parametern
+                            <li class="fragment">Denke dir einen guten Namen für deine Funktion und die beiden Parameter aus
+                            <li class="fragment">Lass die Funktion die beiden Parameter addieren und speichere das Ergebnis in einer Variablen
+                            <li class="fragment">Nutzt dieses Ergebnis als Rückgabe-Wert der Funktion
+                            <li class="fragment">Ruft die Funktion auf und gebt das Ergebnis auf der Console aus
                         </ul>
                     </section>
                 </section>
@@ -351,19 +464,43 @@
 }</code></pre>
                     </section>
                 </section>
+                <section>
+                    <h2>Pair-Programming</h2>
+                    <ul>
+                        <li class="fragment">Beim <a target="_blank" href="http://de.wikipedia.org/wiki/Paarprogrammierung">Pair-Programming</a> schreibt ihr mit jemand anderem zusammen
+                        <li class="fragment">Ein Programmierer tippt, der andere berät und behält den Überblick
+                        <li class="fragment">Die Rollen werden regelmäßig getauscht
+                        <li class="fragment">Sinn ist hauptsächlich
+                            <ul>
+                                <li class="fragment">eine Überprüfung des Programms
+                                <li class="fragment">Wissenstransfer
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
 
                 <section>
-                    <h2>Übung: Erzeuge deine eigene Magische Zahl</h2>
-                    <p class="fragment">Wir spielen ein Ratespiel</p>
-                    <ul>
-                        <li class="fragment">Beginne mit dem Ratespiel auf <a target="_blank" href="http://jsbin.com/OMogiNo/1/edit?html,js,console,output">jsbin.com</a>
-                        <li class="fragment">Verändere die Berechnung der geheimen Zahl, so dass das erraten möglichst schwierig ist
-                        <li class="fragment">Nutze eine ggf. Fallunterscheidung
-                        <li class="fragment">Stelle allerdings sicher, dass du für jede Eingabe das richtige Ergegnis um Kopf errechnen kannst
-                        <li class="fragment">Diese Mal musst du allein arbeiten, damit keiner vorher weiß, wie sich deine geheime Zahl errechnet
-                        <li class="fragment">Teile Links auf das fertige Programm und lass andere deine Berechnung erraten
-                    </ul>
-
+                    <section>
+                        <h3>Übung: Erzeuge deine eigene Magische Zahl</h3>
+                        <p>Wir spielen ein Ratespiel</p>
+                        <ul>
+                            <li class="fragment">Versuche herauszufinden, wie sich die <a target="_blank" href="http://jsbin.com/OMogiNo/3">Magische Zahl</a> errechnet
+                            <li class="fragment">Suche die einen Partner, mit dem du zusammen im Pair-Programming-Stil ein eigenes Rätseln erstellen willst
+                            <li class="fragment">Beginne mit dem Ratespiel auf <a target="_blank" href="http://jsbin.com/OMogiNo/3/edit?html,js,output">jsbin.com</a>
+                            <li class="fragment">Verändere die Berechnung der geheimen Zahl, so dass das erraten möglichst schwierig ist
+                            <li class="fragment">Stelle allerdings sicher, dass du für jede Eingabe das richtige Ergebnis im Kopf errechnen kannst
+                            <li class="fragment">Teile Links auf das fertige Programm und lass andere deine Berechnung erraten
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Hilfestellungen</h3>
+                        <ul>
+                            <li class="fragment">Lass dich nicht von dem komplexen HTML einschüchtern, dies musst du nicht versehen
+                            <li class="fragment">Verändere nur die Funktion <code>werteFormularAus</code>, die bereits vorliegt
+                            <li class="fragment">Die Funktion <code>parseInt</code> macht aus einem Text eine Zahl
+                            <li class="fragment">Nutze eine ggf. Fallunterscheidung und die Berechnung schwieriger zu machen
+                        </ul>
+                    </section>
                 </section>
 
                 <section>
@@ -390,23 +527,9 @@ box.x = 100;
                     </section>
                 </section>
                 <section>
-                    <h2>Pair-Programming</h2>
-                    <ul>
-                        <li class="fragment">Beim <a target="_blank" href="http://de.wikipedia.org/wiki/Paarprogrammierung">Pair-Programming</a> schreibt ihr mit jemand anderem zusammen
-                        <li class="fragment">Ein Programmierer tippt, der andere berät und behält den Überblick
-                        <li class="fragment">Die Rollen werden regelmäßig getauscht
-                        <li class="fragment">Sinn ist hauptsächlich
-                            <ul>
-                                <li class="fragment">eine Überprüfung des Programms
-                                <li class="fragment">Wissenstransfer
-                            </ul>
-                        </li>
-                    </ul>
-                </section>
-                <section>
                     <h2>Übung: Ein Spiel mit Pair-Programming erweitern</h2>
                     <ul>
-                        <li class="fragment">Mache dich mit dem sehr einfachen Spiel auf <a target="_blank" href="http://jsbin.com/akipoyiH/2/edit?html,js,console,output">jsbin.com</a> vertraut
+                        <li class="fragment">Mache dich mit dem sehr einfachen Spiel auf <a target="_blank" href="http://jsbin.com/akipoyiH/2/edit?html,js,output">jsbin.com</a> vertraut
                         <li class="fragment">Suche dir einen Partner mit dem du das Spiel zusammen erweiterst
                         <li class="fragment">Erweiterungsmöglichkeiten sind im Programm-Code des Spiels beschrieben
                         <li class="fragment">Haltet euch an die Pair-Programming Regeln, tauscht mindestens einmal die Rollen
