@@ -20,7 +20,7 @@ function loop() {
     draw();
 }
 
-setInterval(loop, 10);
+setInterval(loop, 100);
 
 var canvas = document.getElementById('game');
 canvas.width = window.innerWidth;
@@ -37,19 +37,30 @@ var box = {
     w: 10,
     h: 10,
     color: 'black',
-    speed: 5
+    speed: 50
 };
 
 function update() {
-    if (38 in pressed) box.y = box.y - box.speed; // up
-    if (40 in pressed) box.y = box.y + box.speed; // down
-    if (37 in pressed) box.x = box.x - box.speed; // left
-    if (39 in pressed) box.x = box.x + box.speed; // right
+    var oldX = box.x;
+    var oldY = box.y;
+    if (38 in pressed) box.y -= box.speed; // up
+    if (40 in pressed) box.y += box.speed; // down
+    if (37 in pressed) box.x -= box.speed; // left
+    if (39 in pressed) box.x += box.speed; // right
 
     if (box.x < 0) box.x = 0;
     if (box.y < 0) box.y = 0;
     if (box.x >= canvas.width - box.w) box.x = canvas.width - box.w;
     if (box.y >= canvas.height - box.h) box.y = canvas.height - box.h;
+
+    var boxMoved = oldX !== box.x || oldY !== box.y;
+    if (boxMoved) {
+        if (box.color === 'black') {
+            box.color = 'blue';
+        } else {
+            box.color = 'black';
+        }
+    }
 }
 
 function draw() {
@@ -58,12 +69,9 @@ function draw() {
 }
 
 ////////////////////////////
-//
 // Mögliche Erweiterungen
-// - Verändere die Geschwindigkeit, Startposition, Größe und Farbe der Box
-// - Box nicht am Rand stoppen lassen, sondern auf der anderen Seite wieder herauskommen lassen
 // - Farbe der Box bei jedem Schritt ändern
 // - Trägheit und Beschleunigung einführen
 // - Hindernisse einführen und auf Kollision prüfen
-// - Einen zweiten Spieler mitspielen lassen (Steuerung über andere Tasten)
+// - Einen zweiten Spieler mitspielen lassen (Steuerung über anderer Tasten)
 ////////////////////////////

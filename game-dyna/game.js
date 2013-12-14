@@ -32,29 +32,54 @@ var context = canvas.getContext('2d');
 ////////////////////////////
 
 var box = {
-    x: 0,
-    y: 0,
+    x: 100,
+    y: 100,
     w: 10,
     h: 10,
     color: 'black',
-    speed: 5
+    accelaration: 0.1,
+    velocity: {
+        x: 0,
+        y: 0
+    }
 };
 
 function update() {
-    if (38 in pressed) box.y = box.y - box.speed; // up
-    if (40 in pressed) box.y = box.y + box.speed; // down
-    if (37 in pressed) box.x = box.x - box.speed; // left
-    if (39 in pressed) box.x = box.x + box.speed; // right
+    if (38 in pressed) box.velocity.y -= box.accelaration; // up
+    if (40 in pressed) box.velocity.y += box.accelaration; // down
+    if (37 in pressed) box.velocity.x -= box.accelaration; // left
+    if (39 in pressed) box.velocity.x += box.accelaration; // right
 
-    if (box.x < 0) box.x = 0;
-    if (box.y < 0) box.y = 0;
-    if (box.x >= canvas.width - box.w) box.x = canvas.width - box.w;
-    if (box.y >= canvas.height - box.h) box.y = canvas.height - box.h;
+    box.x += box.velocity.x;
+    box.y += box.velocity.y;
+
+    if (box.x < box.w) {
+        box.x = box.w;
+        box.velocity.x = -box.velocity.x;
+    }
+    if (box.y < box.h) {
+        box.y = box.h;
+        box.velocity.y = -box.velocity.y;
+    }
+    if (box.x >= canvas.width - box.w) {
+        box.x = canvas.width - box.w;
+        box.velocity.x = -box.velocity.x;
+    }
+    if (box.y >= canvas.height - box.h) {
+        box.y = canvas.height - box.h;
+        box.velocity.y = -box.velocity.y;
+    }
+
+    // gravity
+    box.velocity.y += 0.01;
 }
 
 function draw() {
     context.fillStyle = box.color;
-    context.fillRect(box.x, box.y, box.w, box.h);
+    context.beginPath();
+    context.arc(box.x, box.y, box.w, 0, Math.PI * 2);
+    context.fill();
+    context.closePath();
 }
 
 ////////////////////////////
