@@ -3,14 +3,14 @@
 ////////////////////////////
 
 var pressed = {};
-document.onkeydown = function (e) {
+window.onkeydown = function (e) {
     if (e.keyCode === 40 || e.keyCode === 38 || e.keyCode === 37 || e.keyCode === 39 || e.keyCode === 32) {
         e.preventDefault();
     }
     pressed[e.keyCode] = true;
 };
 
-document.onkeyup = function (e) {
+window.onkeyup = function (e) {
     delete pressed[e.keyCode];
 };
 
@@ -24,19 +24,19 @@ function loop() {
     });
 }
 
+var loopId;
 function stop() {
     clearInterval(loopId);
 }
 
-var loopId = setInterval(loop, 10);
+function start() {
+    loopId = setInterval(loop, 10);
+}
 
 var canvas = document.getElementById('game');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var context = canvas.getContext('2d');
-
-var acceleration = 0.1;
-var gravity = 0.01;
 
 var objects = [];
 
@@ -46,6 +46,12 @@ function addObject(object) {
 function removeObject(object) {
     objects.splice(objects.indexOf(object), 1);
 }
+var acceleration = 0.1;
+var gravity = 0.01;
+
+
+var gameOver = false;
+var gamePaused= false;
 
 ////////////////////////////
 // Generic Game
@@ -58,6 +64,8 @@ function ballsCollide(object1, object2) {
 }
 
 function updateBall () {
+    if (gamePaused) return;
+
     if (38 in pressed) this.velocity.y -= acceleration; // up
     if (40 in pressed) this.velocity.y += acceleration; // down
     if (37 in pressed) this.velocity.x -= acceleration; // left
@@ -87,6 +95,8 @@ function updateBall () {
 }
 
 function drawBall() {
+    if (gamePaused) return;
+
     context.fillStyle = this.color;
     context.beginPath();
     context.arc(this.position.x, this.position.y, this.r, 0, Math.PI * 2);
@@ -116,7 +126,6 @@ addObject(player);
 
 var logic = {
     ballsCaught: 0,
-    gameOver: false,
     greenBallLikeliness: 0.1,
     redBallLikeliness: 0.01,
     createBall: function() {
@@ -144,31 +153,35 @@ var logic = {
         };
     },
     createRedBall: function () {
-        var thisLogic = this;
         var ball = this.createBall();
-        // don't immediately collidate with player
+        // don't immediately collide with player
         if (ballsCollide(ball, player)) {
             removeObject(ball);
         }
         ball.color = 'red';
         ball.update = function() {
             if (ballsCollide(ball, player)) {
-                console.log(ball);
-                console.log(player);
-                thisLogic.gameOver = true;
+                gameOver = true;
             }
         };
     },
     update: function() {
-        if (Math.random() < this.greenBallLikeliness) this.createGreenBall();
-        if (Math.random() < this.redBallLikeliness) this.createRedBall();
-        if (27 in pressed) this.gameOver = true; // esc
-        if (this.gameOver) stop();
+        if (!gamePaused) {
+            if (Math.random() < this.greenBallLikeliness) this.createGreenBall();
+            if (Math.random() < this.redBallLikeliness) this.createRedBall();
+        }
+        if (27 in pressed) {
+            gamePaused = !gamePaused;
+            // small hack to avoid double triggering of ESC (next triggering possible in .1 seconds)
+            stop();
+            setTimeout(start, 100);
+        }
+        if (gameOver) stop();
     },
     draw: function() {
+        var highScore = localStorage.getItem('balls-highscore') || 0;
         var text;
-        if (this.gameOver) {
-            var highScore = localStorage.getItem('balls-highscore') || 0;
+        if (gameOver) {
             if (this.ballsCaught > highScore) {
                 text = 'Game over, NEW HIGHTSCORE: ' + this.ballsCaught;
                 localStorage.setItem('balls-highscore', this.ballsCaught);
@@ -180,7 +193,12 @@ var logic = {
         }
         context.fillStyle = 'black';
         context.fillText(text, 20, canvas.height - 20);
+        context.fillText('Hit green balls and avoid red ones. Accelerate by using cursor keys. Hit ESC to pause. Reload page to try again. Current high score: '+ highScore, 20, 20);
+        if (gamePaused) {
+            context.fillText('Paused, hit ESC to resume', 100, 100);
+        }
     }
 };
-objects.push(logic);
+addObject(logic);
+start();
 
